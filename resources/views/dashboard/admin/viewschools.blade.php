@@ -59,8 +59,7 @@ l            <ol class="breadcrumb float-sm-right">
                         <input type="hidden" name="schoolname" value="{{ $viewsingleschool->schoolname }}" id="">
                         <input type="hidden" name="ref_no" value="{{ $viewsingleschool->ref_no1 }}" id="">
                         <input type="hidden" name="address" value="{{ $viewsingleschool->address }}" id="">
-                        {{-- <input type="text" name="logo" value="{{ $viewsingleschool->logo }}" id=""> --}}
-                        {{-- <input type="text" name="email" value="{{ $viewsingleschool->email }}" id=""> --}}
+                        
                         <input type="text" value="{{ $viewsingleschool->schoolname }}" class="form-control" name="schoolname" placeholder="fname">
 
                       </div>
@@ -149,7 +148,7 @@ l            <ol class="breadcrumb float-sm-right">
                         <a href="{{ url('admin/viewprimariesschools/'.$viewsingleschool->lga) }}" class="btn btn-primary">Back</a> 
                         <a href="{{ url('admin/viewsheadsgas/'.$viewsingleschool->slug) }}" class="btn btn-success">View Heads</a> 
                         <a href="{{ url('admin/viewschoolsteacheradlgas/'.$viewsingleschool->slug) }}" class="btn btn-dark">View teachers</a> 
-                            <a href="{{ url('admin/viewschoolsresultslgas/'.$viewsingleschool->slug) }}" class="btn btn-warning">View Result</a> 
+                            <a href="{{ url('admin/viewschoolsclassesbyadmin/'.$viewsingleschool->ref_no1) }}" class="btn btn-warning">View Result</a> 
                             <a href="{{ url('admin/viewschoolsactivilgas/'.$viewsingleschool->slug) }}" class="btn btn-secondary">View Activities</a> 
                             <a href="{{ url('admin/deleteschools/'.$viewsingleschool->slug) }}" class="btn btn-danger">Delete</a> 
                         </div>
@@ -165,7 +164,7 @@ l            <ol class="breadcrumb float-sm-right">
                                 }
                           </style>
                           <ul class="hop">
-                          <li><a href="{{ url('admin/viewallstudentsadmin/'.$viewsingleschool->slug) }}" class="btn btn-primary">View All Students</a> 
+                          <li><a href="{{ url('admin/viewschoolsclassesbyadminstudent/'.$viewsingleschool->ref_no1) }}" class="btn btn-primary">View All Students</a> 
                             </li>
                             <li><a href="{{ url('admin/viewsrejectedstudentsad/'.$viewsingleschool->slug) }}" class="btn btn-success">View Rejected Students</a> </li>
                             <li><a href="{{ url('admin/viewsuspendedstudentsad/'.$viewsingleschool->slug) }}" class="btn btn-dark">View Suspended Student</a> </li>
@@ -188,8 +187,8 @@ l            <ol class="breadcrumb float-sm-right">
                           </style>
                           <ul class="hop">
                           
-                            <li><a href="{{ url('admin/viewsapproveresultsad/'.$viewsingleschool->slug) }}" class="btn btn-secondary">Approved Results</a> </li>
-                            <li><a href="{{ url('admin/viewunapproveresultsbyadmin/'.$viewsingleschool->slug) }}" class="btn btn-danger">Unapproved Results</a> </li>
+                            {{-- <li><a href="{{ url('admin/viewsapproveresultsad/'.$viewsingleschool->slug) }}" class="btn btn-secondary">Approved Results</a> </li> --}}
+                            {{-- <li><a href="{{ url('admin/viewunapproveresultsbyadmin/'.$viewsingleschool->slug) }}" class="btn btn-danger">Unapproved Results</a> </li> --}}
                             <li><a href="{{ url('admin/analyseresult/'.$viewsingleschool->slug) }}" class="btn btn-primary">View Result Analysis</a> 
                             </li>
                           </ul>

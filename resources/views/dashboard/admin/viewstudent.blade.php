@@ -49,6 +49,17 @@
                     <b>DOB</b> <a class="float-right">{{ $view_students->dob }}</a>
                   </li>
                   <li class="list-group-item">
+                    <b>School</b> <a class="float-right">{{ $view_students->school['schoolname'] }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Center Number</b> <a class="float-right">{{ $view_students->school['centernumber'] }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Address</b> <a class="float-right">{{ $view_students->school['address'] }}</a>
+                  </li>
+
+
+                  <li class="list-group-item">
                     <b>Section</b> <a class="float-right">{{ $view_students->section }}</a>
                   </li>
 

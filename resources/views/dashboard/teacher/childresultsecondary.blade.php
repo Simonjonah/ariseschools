@@ -89,7 +89,7 @@ table, tr, td{
                 <img style="width: 100%; height: 50px;" src="{{ asset('public/../'.$getyour_result->logo) }}">
             </th>
            
-            <th style="text-transform:uppercase; text-align: center; width: 450px;"><h1>{{ $getyour_result->school['schoolname'] }}</h1>
+            <th style="text-transform:uppercase; text-align: center; width: 450px; font-size: px"><h1>{{ $getyour_result->school['schoolname'] }}</h1>
                 <p style="font-weight: normal; margin-bottom: -8px;">{{ $getyour_result->school['address'] }}</p>
                 <p  style="font-weight: normal; font-style:italic; color: red; margin-top: 20px">Motor: {{ $getyour_result->school['motor'] }}</p> 
             </th>
@@ -118,7 +118,6 @@ table, tr, td{
               <th>SUBJECTS OFFERED </th>
               <th>CONTINIEUS ASSESSMENT TEST 1</th>
               <th>CONTINIEUS ASSESSMENT TEST 2</th>
-              <th>CONTINIEUS ASSESSMENT TEST 3</th>
               <th>EXAMINATION SCORES</th>
               <th>TOTAL</th>
               <th>-</th>
@@ -128,13 +127,11 @@ table, tr, td{
             <tr>
 
               <td>-</td>
-              <td>10</td>
-              <td>10</td>
-              <td>10</td>
+              <td>15</td>
+              <td>15</td>
               <td>70</td>
               <td>100</td>
               <!-- <td>-</td> -->
-              <td>-</td>
               <td>-</td>
 
             </tr>
@@ -148,7 +145,6 @@ table, tr, td{
                 <td>{{ $getyour_result->subjectname }}</td>
                 <td>{{ $getyour_result->test_1 }}</td>
                 <td>{{ $getyour_result->test_2 }}</td>
-                <td>{{ $getyour_result->test_3 }}</td>
                 <td>{{ $getyour_result->exams }}</td>
                 <td>{{ $getyour_result->test_1 + $getyour_result->test_2 + $getyour_result->test_3 + $getyour_result->exams}}</td>
                 <td>@if ($getyour_result->test_1 + $getyour_result->test_2 + $getyour_result->test_3 + $getyour_result->exams > 79)
@@ -189,11 +185,11 @@ table, tr, td{
                 <td>Total</td>
                 <td>-</td>
                 <td>-</td>
-                <td>-</td>
                 {{-- <td>-</td> --}}
-                <td><b>{{ $total_score }}</b></td>
-                <!-- <td><b>-</b></td> -->
+                {{-- <td>-</td> --}}
                 <td>-</td>
+                <!-- <td><b>-</b></td> -->
+                <td><b>{{ $total_score }}</b></td>
                 <td></td>
                 <td>Grade</td>
 

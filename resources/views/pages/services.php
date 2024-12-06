@@ -1,45 +1,184 @@
-<?php require_once 'common/header.php'; ?>
+@include('layouts.header')
+
 	<!--Page Title-->
-    <section class="page-title" style="background-image:url(images/background/juv3.jpg)">
+    <section class="page-title" style="background-image:url(images/background/bri2.jpg)">
     	<div class="auto-container">
 			<div class="content">
-				<h1>The News <span> paper </span></h1>
+				<h1>Services <span>page</span></h1>
 				<ul class="page-breadcrumb">
-					<li><a href="<?php echo HOME; ?>home">News</a></li>
-					<li>Services</li>
+					<li><a href="home">Home</a></li>
+					<li>Pages</li>
+					<li>Services Rendered</li>
 				</ul>
 			</div>
         </div>
     </section>
     <!--End Page Title-->
-
-	<!-- Services Section Ten -->
-	<section class="services-section-ten style-two">
+<!-- Team Section Two -->
+	<section class="team-section-two" >
 		<div class="auto-container">
 			<!-- Sec Title -->
-			<div class="sec-title centered">
-				<div class="title">Services</div>
-				<h2>The proper way of <br> Diseminating schools<span> information is guaranteed </span></h2>
+			<div class="sec-title-three centered">
+				<div class="title">SERVICES OF MYSCHOOL.AFRICA</div>
+				<div class="text" style="color: #000;">Explore our different Learning package designed for your ultimate benefit.</div>
 			</div>
-			<div class="row clearfix">
-				<?php if (count($newspaper_release) > 0): ?>
-				<?php foreach ($newspaper_release as $newspaper_releases): $date = date('d-m-Y');?>
-				<!-- Services Block Fourteen -->
-				<div class="services-block-fourteen style-two col-lg-4 col-md-6 col-sm-12">
-					<img src="<?php echo HOME. $newspaper_releases['images']; ?>" alt=""></a></h2></span>
-					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="icon-box">
+
+		</div>
+	</section>
+	
+
+
+
+	<!-- Services Section Nine -->
+	<section class="services-section-nine" style="margin-bottom: 40px;">
+		<div class="auto-container">
+			
+			
+			<div class="clearfix">
+				
+				<!-- Services Block Twelve -->
+				<div class="services-block-twelve col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<img style="width: 100%; height: 300px;" src="images/background/bsch2.jpg" alt=""/>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<h4>E-learning</h4>
+										<div class="text">Bringing quality and innovative learning to your door step through blended approaches.</div>
+										<div class="arrow-box fa fa-angle-right"></div>
+									</div>
+								</div>
+							</div>
+							<!-- Overlay Box Two -->
+							<div class="overlay-box-two">
+								<div class="overlay-inner-two">
+									<div class="large-icon flaticon-statistics"></div>
+									<div class="content-two">
+										<div class="icon-box">
+											<span class="icon flaticon-statistics"></span>
+										</div>
+										<h4><a href="services1">E-learning</a></h4>
+
+										<h4><a href="services1" class='btn btn-sucess'>View</a></h4>
+									</div>
+										
+								</div>
+							</div>
+							
 						</div>
-						<h6><a href="#">Download <?php echo $newspaper_releases['vol']; ?></a></h6>
 					</div>
 				</div>
-
-				<?php endforeach; ?>
-				<?php endif; ?>
+				
+				<!-- Services Block Twelve -->
+				<div class="services-block-twelve col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<img style="width: 100%; height: 300px;" src="images/resource/my6.jpg" alt=""/>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<h4>Career Counselling</h4>
+										<div class="text"> Gain professional advice through our experts on career and other lives endeavour.</div>
+										<div class="arrow-box fa fa-angle-right"></div>
+									</div>
+								</div>
+							</div>
+							<!-- Overlay Box Two -->
+							<div class="overlay-box-two">
+								<div class="overlay-inner-two">
+									<div class="large-icon flaticon-graph"></div>
+									<div class="content-two">
+										<div class="icon-box">
+											<span class="icon flaticon-graph"></span>
+										</div>
+										<h4><a href="careers" class='btn btn-sucess'>Career Counselling</a></h4>
+										<h4><a href="careers" class='btn btn-sucess'>View</a></h4>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				<!-- Services Block Twelve -->
+				<div class="services-block-twelve col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<img style="width: 100%; height: 300px;" src="images/background/juv5.jpg" alt=""/>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<h4>Contact Teacher's Services</h4>
+										<div class="text">Get the best hands to guide your wards through challenging subjects with effective results.</div>
+										<div class="arrow-box fa fa-angle-right"></div>
+									</div>
+								</div>
+							</div>
+							<!-- Overlay Box Two -->
+							<div class="overlay-box-two">
+								<div class="overlay-inner-two">
+									<div class="large-icon flaticon-money-bag"></div>
+									<div class="content-two">
+										<div class="icon-box">
+											<span class="icon flaticon-money-bag"></span>
+										</div>
+										<h4><a href="view_teachers" class='btn btn-sucess'>Contact Teacher's Service</a></h4>
+										<h4><a href="view_teachers" class='btn btn-sucess'>View</a></h4>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				<!-- Services Block Twelve -->
+				<div class="services-block-twelve col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image">
+							<img style="width: 100%; height: 300px;" src="images/background/juv8.jpg" alt=""/>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<h4>Advertise Schools</h4>
+										<div class="text">This platform 'ADVERTISE SCHOOLS' through quality digital marketing strategies and exposes their activities and programmes to their clientele across communities.</div>
+										<div class="arrow-box fa fa-angle-right"></div>
+									</div>
+								</div>
+							</div>
+							<!-- Overlay Box Two -->
+							<div class="overlay-box-two">
+								<div class="overlay-inner-two">
+									<div class="large-icon flaticon-exam"></div>
+									<div class="content-two">
+										<div class="icon-box">
+											<span class="icon flaticon-exam"></span>
+										</div>
+										<h4><a href="schoolregistration" class='btn btn-sucess'>Advertise Schools</a></h4>
+										<h4><a href="schoolregistration" class='btn btn-sucess'>View</a></h4>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</section>
-	<!-- End Services Section Ten -->
 
-	<!--Main Footer-->
-<?php require_once 'common/footer.php'; ?>
+
+	<!-- About Section Four -->
+	
+
+@include('layouts.footer')

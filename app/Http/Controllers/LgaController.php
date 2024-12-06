@@ -204,8 +204,52 @@ class LgaController extends Controller
         return view('dashboard.viewstudentsinlgas', compact('view_students', 'lgas', 'view_sessions', 'view_classes', 'view_secondarystudents'));
     }
     
+    public function viewresultbylga(){
+        $viewlgas = Lga::orderBy('lga')->get();
+        return view('dashboard.admin.viewresultbylga', compact('viewlgas'));
+    }
+
+    public function viewlgaresultsbyadmins($lga){
+        $view_schools = Lga::where('lga', $lga)->first();
+
+        return view('dashboard.admin.viewlgaresultsbyadmins', compact('view_schools'));
+    }
+
 
     
+    
+
+
+    
+
+    public function viewlgastudentsbyadmins($lga){
+        $view_lgastudents = Lga::where('lga', $lga)->first();
+
+        return view('dashboard.admin.viewlgastudentsbyadmins', compact('view_lgastudents'));
+    }
+
+    
+    public function viewprimaryschoolsresultsbyadmins($lga){
+        $view_lgas = Lga::where('lga', $lga)->first();
+        $view_schols = School::where('section', 'Primary')->where('schooltype', 'SUBEB')->get();
+        return view('dashboard.admin.viewprimaryschoolsresultsbyadmins', compact('view_schols', 'view_lgas'));
+    }
+
+
+
+    public function viewsecondaryschoolsresultsbyadmin($lga){
+        $view_lgas = Lga::where('lga', $lga)->first();
+        $view_schols = School::where('section', 'Secondary')->where('schooltype', 'SSEB')->get();
+        return view('dashboard.admin.viewsecondaryschoolsresultsbyadmin', compact('view_schols', 'view_lgas'));
+    }
+
+     
+    
+    public function lgastudents(){
+        $viewlgas = Lga::orderBy('lga')->get();
+
+        return view('dashboard.admin.lgastudents', compact('viewlgas'));
+    }
     public function deletelga($id){
         $viewlgas = Lga::where('id', $id)->delete();
         return redirect()->back()->with('success', 'deleted successfully');

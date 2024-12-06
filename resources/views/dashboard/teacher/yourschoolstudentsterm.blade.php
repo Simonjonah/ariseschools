@@ -55,14 +55,14 @@
                   <tbody>
 
                     @foreach ($view_primarypupils as $view_primarypupil)
-                      @if ($view_primarypupil->school['section'] ==  Auth::guard('teacher')->user()->school['section']  && $view_primarypupil->school['address'] ==  Auth::guard('teacher')->user()->school['address'] && $view_primarypupil->school['lga'] ==  Auth::guard('teacher')->user()->school['lga'] && $view_primarypupil->school['connect'] ==  Auth::guard('teacher')->user()->school['connect']  && $view_primarypupil->school['address'] ==  Auth::guard('teacher')->user()->school['address'] && $view_primarypupil->school['lga'] ==  Auth::guard('teacher')->user()->school['lga'] && $view_primarypupil->school_id ==  Auth::guard('teacher')->user()->school_id) 
+                      @if ($view_primarypupil->school['section'] ==  Auth::guard('teacher')->user()->school['section']  && $view_primarypupil->school['address'] ==  Auth::guard('teacher')->user()->school['address'] && $view_primarypupil->school['lga'] ==  Auth::guard('teacher')->user()->school['lga'] && $view_primarypupil->school['connect'] ==  Auth::guard('teacher')->user()->school['connect']  && $view_primarypupil->school['address'] ==  Auth::guard('teacher')->user()->school['address'] && $view_primarypupil->school['lga'] ==  Auth::guard('teacher')->user()->school['lga'] && $view_primarypupil->school['id'] ==  Auth::guard('teacher')->user()->school_id) 
                         <tr>
                           <td>{{ $view_primarypupil->fname }}</td>
                           <td>{{ $view_primarypupil->middlename }}</td>
                           <td>{{ $view_primarypupil->surname }}
-                            <small><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
+                            {{-- <small><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
                           Search Term and year
-                        </button></small>
+                        </button></small> --}}
                           </td>
                           <td> {{ $view_primarypupil->section }}
                             <small>{{ $view_primarypupil->school['schoolname'] }}</small>
@@ -215,7 +215,7 @@
           <div class="form-group">
             <label for="">School </label>
             <select class="form-control" name="school_id">
-                <option value="{{ Auth::guard('teacher')->user()->school_id }}">{{ Auth::guard('teacher')->user()->schoolname }}</option>
+                <option value="{{ Auth::guard('teacher')->user()->school['school_id'] }}">{{ Auth::guard('teacher')->user()->school['schoolname'] }}</option>
             </select>
           </div>
 
@@ -244,10 +244,10 @@
           <div class="form-group">
             <label for="">Terms</label>
             <select class="form-control" name="term">
-              @foreach ($view_primarypupils as $view_primarypupil)
-                <option value="{{ $view_primarypupil->term }}">{{ $view_primarypupil->term }}</option>
+                <option value="First Term">First Term</option>
+                <option value="Second Term">Second Term</option>
+                <option value="Third Term">Third Term</option>
                 
-              @endforeach
             </select>
           </div>
 

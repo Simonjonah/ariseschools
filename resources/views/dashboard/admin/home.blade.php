@@ -531,8 +531,8 @@
 
                       @foreach ($view_blogs as $view_blog)
                       <tr>
-                       
-                        <td>{{ $view_blog->user['schoolname'] }}</td>
+                        {{-- <td>{{ $view_blog->user['schoolname'] }}</td> --}}
+
                         <td> <a href="{{ url('admin/blogview/'.$view_blog->ref_no) }}">{{ $view_blog->title }}</a></td>
                         <td>{{ $view_blog->phone }}</td>
 

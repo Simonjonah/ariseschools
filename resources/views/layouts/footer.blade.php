@@ -1,5 +1,5 @@
 <!--Main Footer-->
-<footer class="main-footer" style="background-color: #046020">
+<footer class="main-footer">
     <div class="auto-container">
         <!--Widgets Section-->
         <div class="widgets-section">
@@ -13,13 +13,15 @@
                         <div class="footer-column col-lg-7 col-md-6 col-sm-12">
                             <div class="footer-widget logo-widget">
                                 <div class="logo">
-                                    <a href="home"><img style="width: 100px; height: 100px;" src="{{ asset('images/aks.jpg') }}" alt="" /></a>
+                                    <a href="home"><img style="width: 150px; height: 100px;" src="{{ asset('images/logo.jpg') }}" alt="" /></a>
                                 </div>
                                 
                                 <ul class="list-style-two">
-                                    <li style="color: #FFA500; font-weight: bold;"><span class="icon fa fa-phone"></span> +234 814 065 8029, +234 816 7930 965</li>
-                                    <li style="color: #FFA500; font-weight: bold;"><span class="icon fa fa-envelope"></span> info@schoolsupdate.ng</li>
-                                    <li style="color: #FFA500; font-weight: bold;"><span class="icon fa fa-home"></span>No. 4 Attiku Abubbakka Avenue, Uyo<br> Akwa Ibom State, Nigeria  </li>
+                                    <li><span class="icon fa fa-phone"></span> +234 806 262 6853, +234 816 7930 965</li>
+                                    <li><span class="icon fa fa-envelope"></span> info@schoolsupdate.ng</li>
+                                    <li><span class="icon fa fa-home"></span>NASU Secretariat, University of uyo Town Campus, <br> Uyo
+                                        Akwa Ibom State
+                                        Nigeria. </li>
                                 </ul>
                             </div>
                         </div>
@@ -27,12 +29,12 @@
                         <!--Footer Column-->
                         <div class="footer-column col-lg-5 col-md-6 col-sm-12">
                             <div class="footer-widget links-widget">
-                                <h4 style="color: #FFA500; font-weight: bold;">Links</h4>
+                                <h4>Links</h4>
                                 <ul class="list-link">
-                                    <li><a style="color: #FFA500; font-weight: bold;" href="{{ url('home') }}">Home</a></li>
-                                    <li><a style="color: #FFA500;; font-weight: bold;" href="{{ url('blog') }}">Services</a></li>
-                                    <li><a style="color: #FFA500;; font-weight: bold;" href="{{ url('about') }}">About us</a></li>
-                                    <li><a style="color: #FFA500;; font-weight: bold;" href="{{ url('contact') }}">Contact</a></li>
+                                    <li><a href="{{ url('home') }}">Home</a></li>
+                                    <li><a href="{{ url('blog') }}">Services</a></li>
+                                    <li><a href="{{ url('about') }}">About us</a></li>
+                                    <li><a href="{{ url('contact') }}">Contact</a></li>
 
                                     
                                 </ul>
@@ -49,11 +51,11 @@
                         <!--Footer Column-->
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget links-widget">
-                                <h4 style="color: #FFA500; font-weight: bold;">Support</h4>
+                                <h4>Support</h4>
                                 <ul class="list-link">
                                     
-                                    <li><a style="color: #FFA500; font-weight: bold;" href="{{  url('blog')  }}">Visit Knowledge Base</a></li>
-                                    <li><a style="color: #FFA500; font-weight: bold;" href="{{  url('contact')  }}">Support System</a></li>
+                                    <li><a href="{{  url('blog')  }}">Visit Knowledge Base</a></li>
+                                    <li><a href="{{  url('contact')  }}">Support System</a></li>
                                     
                                 </ul>
                             </div>
@@ -62,12 +64,12 @@
                         <!--Footer Column-->
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget gallery-widget">
-                                <h4 style="color: #FFA500; font-weight: bold;">Work with us</h4>
+                                <h4>Work with us</h4>
                                 <ul class="list-link">
-                                    <li><a style="color: #FFA500; font-weight: bold;" href="#">Become a Teacher</a></li>
-                                    <li><a style="color: #FFA500; font-weight: bold;" href="{{ url('login') }}">School Login</a></li>
-                                    <li><a style="color: #FFA500; font-weight: bold;" href="#">Refund Policy</a></li>
-                                    <li><a style="color: #FFA500; font-weight: bold;" href="#">Professional Services</a></li>
+                                    <li><a href="#">Become a Teacher</a></li>
+                                    <li><a href="{{ url('login') }}">School Login</a></li>
+                                    <li><a href="#">Refund Policy</a></li>
+                                    <li><a href="#">Professional Services</a></li>
                                 </ul>
                                 
                             </div>
@@ -80,13 +82,13 @@
         </div>
     </div>
         <!-- Footer Bottom -->
-    <div class="footer-bottom" style="background-color: #0b5d18">
+    <div class="footer-bottom">
         <div class="auto-container">
             <div class="row clearfix">
                 
                 <!-- Copyright Column -->
                 <div class="copyright-column col-lg-6 col-md-6 col-sm-12">
-                    <div class="copyright" style="color: #fff">2023 &copy; All rights reserved by <a style="color: #FFA500; font-weight: bold;" href="https://schoolsupdate.ng">Schoolsupdate.ng</a></div>
+                    <div class="copyright">2023 &copy; All rights reserved by <a href="#">Myschoolafrica.com</a></div>
                 </div>
                 
                 <!-- Social Column -->

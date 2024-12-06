@@ -413,16 +413,16 @@ public function admittedstudents(){
 public function reachresultbystudentbyadmin(Request $request){
     // dd($request->all());
     $request->validate([
-        'schoolname' => ['required', 'string'],
+        'slug' => ['required', 'string'],
         'lga' => ['required', 'string'],
         'schooltype' => ['required', 'string'],
     ]);
-    if($viewsecondaries = School::where('schoolname', $request->schoolname)
+    if($viewsecondaries = School::where('slug', $request->slug)
     ->where('lga', $request->lga)
     ->where('schooltype', $request->schooltype)
     ->exists()) {
         $viewsecondaries = School::orderby('created_at', 'DESC')
-        ->where('schoolname', $request->schoolname)
+        ->where('slug', $request->slug)
         ->where('lga', $request->lga)
         ->where('schooltype', $request->schooltype)
         ->get(); 
@@ -463,6 +463,19 @@ public function viewschoolsingle($slug){
     $view_allschoolnews = Schoolnew::where('slug', $slug)->get();
     return view('pages.viewschoolsingle', compact('view_allschoolnews', 'view_allnews'));
 }
+
+
+public function viewschoolsclassesbyadmin($ref_no1){
+    $view_alschool = School::where('ref_no1', $ref_no1)->first();
+    return view('dashboard.admin.viewschoolsclassesbyadmin', compact('view_alschool'));
+}
+
+public function viewschoolsclassesbyadminstudent($ref_no1){
+    $view_alstudent = School::where('ref_no1', $ref_no1)->first();
+
+    return view('dashboard.admin.viewschoolsclassesbyadminstudent', compact('view_alstudent'));
+}
+
 public function search(Request $request)
 {
     $query = $request->input('query');

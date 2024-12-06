@@ -44,11 +44,11 @@
       </div>
       <!-- /.col -->
       <div class="col-sm-8 invoice-col">
-       <h1 style="text-align: center">{{ $print_students->schoolname }}</h1>
+       <h1 style="text-align: center; text-transform: uppercase">{{ $print_students->school['schoolname'] }}</h1>
         <address style="text-align: center">
-          {{ $print_students->address }}
+          {{ $print_students->school['address'] }}
           <br>
-          {{ $print_students->motor }}
+          {{ $print_students->school['motor'] }}
    
         </address>
       </div>

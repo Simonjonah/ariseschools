@@ -59,7 +59,7 @@
                 
                     <div class="form-group">
                         <label>SUBJECT: {{ $assigned_subject->subjectname }}</label>
-                        <input type="hidden" class="form-control" @error('subjectname')
+                        <input required type="hidden" class="form-control" @error('subjectname')
                         @enderror value="{{ $assigned_subject->id }}" name="subject_id" placeholder="Subject name">
                       </div>
                  
@@ -96,6 +96,8 @@
                       <option value="Primary">Primary</option>
                         
                       @else
+                      
+                      <option value="{{ $assigned_subject->section }}">{{ $assigned_subject->section }}</option>
                       <option value="Junior Secondary">Junior Secondary</option>
                       <option value="Senior Secondary">Senior Secondary</option>
                         
@@ -107,16 +109,16 @@
                     <div class="form-group">
                       <h5>Select Teacher </h5>
                       <select required class="form-control" type="text" name="teacher_id">
-                        @if (Auth::guard('teacher')->user()->section == 'Secondary' || Auth::guard('teacher')->user()->section == 'Junior Secondary')
-                          @if ($assigned_subject->section == 'Secondary' || $assigned_subject->section == 'Junior Secondary' ) 
+                        {{-- @if (Auth::guard('teacher')->user()->school_id ==  Auth::guard('teacher')->user()->school_id) --}}
+                          {{-- @if ($assigned_subject->section == 'Secondary' || $assigned_subject->section == 'Junior Secondary' )  --}}
                             @foreach ($assigned_teacherto_subjects as $assigned_teacherto_subject)
                               <option value="{{ $assigned_teacherto_subject->id }}">{{ $assigned_teacherto_subject->fname }} {{ $assigned_teacherto_subject->surname }} {{ $assigned_teacherto_subject->schoolname }} {{ $assigned_teacherto_subject->section }} {{ $assigned_teacherto_subject->classname }}</option>
                             @endforeach
-                          @else
-                          @endif 
-                        @else
+                          {{-- @else
+                          @endif  --}}
+                        {{-- @else --}}
                           
-                        @endif
+                        {{-- @endif --}}
                       
                       </select>
                   </div>

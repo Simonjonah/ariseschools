@@ -294,9 +294,9 @@
         @csrf
           <div class="form-group">
             <label for="">Sch. Name</label>
-              <select name="schoolname" class="form-control" id="">
+              <select name="school_id" class="form-control" id="">
                 @foreach ($view_schholsresults as $view_schholsresult)
-                  <option value="{{ $view_schholsresult->schoolname }}">{{ $view_schholsresult->schoolname }}</option>
+                  <option value="{{ $view_schholsresult->school['school_id'] }}">{{ $view_schholsresult->school['schoolname'] }}</option>
                 @endforeach
               </select>
           </div>

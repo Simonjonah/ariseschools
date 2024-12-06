@@ -5,7 +5,7 @@
 <!-- Mirrored from themexriver.com/tfhtml/finano/index-5.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Jan 2019 02:00:56 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Schoolsupdate.ng - the best innovative school management system | Homepage</title>
+<title>Myschoolafrica.com the best educational portal | Homepage</title>
 <!-- Stylesheets -->
 <link href="{{ asset('front/css/bootstrap.css')}}" rel="stylesheet">
 <link href="{{ asset('front/css/style.css')}}" rel="stylesheet">
@@ -42,9 +42,9 @@
                 	<div class="pull-left logo-box" style="margin-top: 20px; margin-right: 30px;">
                     	<div class="logo"><a href="{{ url('/') }}"><img style="width: 50px; height: 50px;" src="{{ asset('images/logo.jpg') }}" alt="" title=""></a></div>
                     </div>
-					<div class="pull-left logo-box" style="margin-top: 20px">
+					{{-- <div class="pull-left logo-box" style="margin-top: 20px">
                     	<div class="logo"><a href="{{ url('/') }}"><img style="width: 50px; height: 50px;" src="{{ asset('images/aks.jpg') }}" alt="" title=""></a></div>
-                    </div>
+                    </div> --}}
                    	
                    	<div class="nav-outer clearfix">
                     
@@ -72,7 +72,7 @@
 									</li> --}}
 	
 								
-									<li><a href="{{ url('competitions') }}">Competitions</a></li>
+									<li><a href="{{ url('services2') }}">Services</a></li>
 								
 								<li><a href="{{ url('contact') }}">Contact us</a></li>
 								<li><a href="{{ url('checkresults') }}">Check Results</a></li>
@@ -121,9 +121,9 @@
             	<div class="logo pull-left" style="margin-right: 30px;">
                 	<a href="{{ url('/') }}" class="img-responsive"><img style="width: 50px; height: 50px;" src="{{ asset('images/logo.jpg') }}" alt="" title=""></a>
                 </div>
-				<div class="logo pull-left">
+				{{-- <div class="logo pull-left">
                 	<a href="{{ url('/') }}" class="img-responsive"><img style="width: 50px; height: 50px;" src="{{ asset('images/aks.jpg') }}" alt="" title=""></a>
-                </div>
+                </div> --}}
                 
                 <!--Right Col-->
                 <div class="right-col pull-right">
@@ -151,7 +151,7 @@
                                 </li> --}}
 
                             
-                                <li><a href="{{ url('competitions') }}">Competitions</a></li>
+                                <li><a href="{{ url('services1') }}">Services</a></li>
                             
                             <li><a href="{{ url('contact') }}">Contact us</a></li>
                             <li><a href="{{ url('checkresults') }}">Check Results</a></li>

@@ -23,9 +23,9 @@
     <a href="{{ url('teacher/home') }}" class="brand-link">
       <img src="{{ asset('/public/../'.Auth::guard('teacher')->user()->logo)}}" alt="logo" class="brand-image "
            style="opacity: .8">
-           <img src="{{ asset('assets/dist/img/aks.jpg') }}" alt="webLTE Logo" class="brand-image "
+           <img src="{{ asset('assets/dist/img/logo.jpg') }}" alt="webLTE Logo" class="brand-image "
            style="opacity: .8">
-           <img src="{{ asset('assets/dist/img/arise.jpg') }}" alt="webLTE Logo" class="brand-image "
+           <img src="{{ asset('assets/dist/img/logo.jpg') }}" alt="webLTE Logo" class="brand-image "
            style="opacity: .8">
            <br>
       <span class="brand-text font-weight-light">{{ Auth::guard('teacher')->user()->schoolname }}</span>
@@ -330,7 +330,7 @@
               <p>
                 Subjects
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -371,7 +371,7 @@
               <p>
                 Classes 
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">46</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -521,7 +521,7 @@
               <p>
                  Psychomotors 
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">

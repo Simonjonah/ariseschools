@@ -246,7 +246,7 @@ class UserController extends Controller
     public function checkfirst (Request $request){
         $request->validate([
             'email' => ['required', 'string', 'email', 'max:255', 'exists:users'],
-            'password' => ['required', 'string', 'min:8']
+            'password' => ['required', 'string', 'min:3']
         ], [
             'email.exist'=>'This email does not exist in the admins table'
         ]);
@@ -797,13 +797,10 @@ class UserController extends Controller
     }
     
 
-    public function addresultsad1($ref_no1){
-        $view_studentsubject = User::where('ref_no1', $ref_no1)->first();
-         
-        $view_teachersubjects = Subject::all();
-       // $view_teachersubjects = Teacherassign::where('user_id', auth::guard('web')->id())->get();
-        return view('dashboard.admin.addresultsad1', compact('view_teachersubjects','view_studentsubject'));
-    }
+    
+
+
+
     public function currentresult(){
         $view_yourresults = User::where('guardian_id', auth::guard('guardian')->id()
         )->get();

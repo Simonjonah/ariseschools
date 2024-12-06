@@ -38,9 +38,9 @@
                   <thead>
                   <tr>
                     <th>Schoolname</th>
-                    <th>Surname</th>
-                    <th>First Name</th>
-                    <th>Ref NO</th>
+                    <th>Address</th>
+                    <th>Motto</th>
+                    <th>Center Number</th>
                     <th>Status</th>
                     <th>Logo</th>
                     <th>View</th>
@@ -61,8 +61,8 @@
                       <tr>
                         <td>{{ $viewprimarie->schoolname }}</td>
 
-                        <td>{{ $viewprimarie->surname }}</td>
-                        <td>{{ $viewprimarie->fname }}</td>
+                        <td>{{ $viewprimarie->address }}</td>
+                        <td>{{ $viewprimarie->motor }}</td>
                         <td>{{ $viewprimarie->ref_no1 }}</td>
                         <td>@if ($viewprimarie->status == null)
                             <span class="badge badge-secondary"> In progress</span>
@@ -122,9 +122,9 @@
                   <tfoot>
                     <tr>
                         <th>Schoolname</th>
-                        <th>Surname</th>
-                        <th>First Name</th>
-                        <th>Ref NO</th>
+                        <th>Address</th>
+                        <th>Motto</th>
+                        <th>Center Number</th>
                         <th>Status</th>
                         <th>Logo</th>
                         <th>View</th>

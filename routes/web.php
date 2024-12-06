@@ -273,6 +273,11 @@ Route::prefix('admin')->name('admin.')->group(function() {
         
         Route::get('/editschooladmin/{slug}', [SchoolsController::class, 'editschooladmin'])->name('editschooladmin');
         Route::put('/updateschooladmin/{slug}', [SchoolsController::class, 'updateschooladmin'])->name('updateschooladmin');
+        Route::get('/editviewresultsad/{id}', [ResultController::class, 'editviewresultsad'])->name('editviewresultsad');
+        Route::put('/updateheresultadmin/{id}', [ResultController::class, 'updateheresultadmin'])->name('updateheresultadmin');
+        Route::get('/lgastudents', [LgaController::class, 'lgastudents'])->name('lgastudents');
+        Route::get('/viewlgastudentsbyadmins/{lga}', [LgaController::class, 'viewlgastudentsbyadmins'])->name('viewlgastudentsbyadmins');
+        Route::get('/viewschoolsclassesbyadminstudent/{ref_no1}', [SchoolsController::class, 'viewschoolsclassesbyadminstudent'])->name('viewschoolsclassesbyadminstudent');
         
         Route::get('deletetermad/{id}', [TermController::class, 'deletetermad'])->name('deletetermad');
         Route::put('updatetermad/{id}', [TermController::class, 'updatetermad'])->name('updatetermad');
@@ -316,7 +321,16 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('viewsinglelgasschool/{lga}', [LgaController::class, 'viewsinglelgasschool'])->name('viewsinglelgasschool');
         Route::get('viewprimariesschools/{lga}', [LgaController::class, 'viewprimariesschools'])->name('viewprimariesschools');
         Route::get('viewsecondariesschools/{lga}', [LgaController::class, 'viewsecondariesschools'])->name('viewsecondariesschools');
+        Route::get('viewprimaryschoolsresultsbyadmins/{lga}', [LgaController::class, 'viewprimaryschoolsresultsbyadmins'])->name('viewprimaryschoolsresultsbyadmins');
+        Route::get('viewsecondaryschoolsresultsbyadmin/{lga}', [LgaController::class, 'viewsecondaryschoolsresultsbyadmin'])->name('viewsecondaryschoolsresultsbyadmin');
         Route::get('sectionboard', [UserController::class, 'sectionboard'])->name('sectionboard');
+        Route::get('viewschoolsclassesbyadmin/{ref_no1}', [SchoolsController::class, 'viewschoolsclassesbyadmin'])->name('viewschoolsclassesbyadmin');
+        Route::get('viewresultbygenadmin/{classname}/{slug}', [ClassnameController::class, 'viewresultbygenadmin'])->name('viewresultbygenadmin');
+        Route::get('viewallstudentsadmin/{classname}/{slug}', [ClassnameController::class, 'viewallstudentsadmin'])->name('viewallstudentsadmin');
+        Route::get('viewsrejectedstudentsad/{slug}', [StudentController::class, 'viewsrejectedstudentsad'])->name('viewsrejectedstudentsad');
+        Route::get('viewsuspendedstudentsad/{slug}', [StudentController::class, 'viewsuspendedstudentsad'])->name('viewsuspendedstudentsad');
+        Route::get('viewschoolsadmittedstudentad/{slug}', [StudentController::class, 'viewschoolsadmittedstudentad'])->name('viewschoolsadmittedstudentad');
+        Route::get('analyseresult/{slug}', [ResultController::class, 'analyseresult'])->name('analyseresult');
         
         Route::get('academedelete/{id}', [AcademicsessionController::class, 'academedelete'])->name('academedelete');
         Route::put('updatesession/{id}', [AcademicsessionController::class, 'updatesession'])->name('updatesession');
@@ -334,9 +348,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('deletesubject/{id}', [SubjectController::class, 'deletesubject'])->name('deletesubject');
         Route::put('updatesubject/{id}', [SubjectController::class, 'updatesubject'])->name('updatesubject');
         Route::get('editsubject/{id}', [SubjectController::class, 'editsubject'])->name('editsubject');
-        Route::get('viewteacherquery/{id}', [QueryController::class, 'viewteacherquery'])->name('viewteacherquery');
-        Route::get('printquery/{id}', [QueryController::class, 'printquery'])->name('printquery');
-        Route::put('addquerytoteacher/{ref_no}', [QueryController::class, 'addquerytoteacher'])->name('addquerytoteacher');
+        Route::get('viewallstudentsadmin/{slug}', [StudentController::class, 'viewallstudentsadmin'])->name('viewallstudentsadmin');
+        Route::get('viewresultbylga', [LgaController::class, 'viewresultbylga'])->name('viewresultbylga');
+        Route::get('viewlgaresultsbyadmins/{lga}', [LgaController::class, 'viewlgaresultsbyadmins'])->name('viewlgaresultsbyadmins');
         Route::get('allteachers', [TeacherController::class, 'allteachers'])->name('allteachers');
         Route::get('queriedteachers', [QueryController::class, 'queriedteachers'])->name('queriedteachers');
         Route::get('sackedteachers', [TeacherController::class, 'sackedteachers'])->name('sackedteachers');
@@ -380,6 +394,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/viewpsycomotor', [DomainController::class, 'viewpsycomotor'])->name('viewpsycomotor');
         Route::get('/schoolspsyco/{id}', [DomainController::class, 'schoolspsyco'])->name('schoolspsyco');
         Route::post('/searchstudentresults', [ResultController::class, 'searchstudentresults'])->name('searchstudentresults');
+        Route::get('/addcommentadmin/{id}', [ResultController::class, 'addcommentadmin'])->name('addcommentadmin');
+        Route::put('/addcommentsbyadmin/{id}', [ResultController::class, 'addcommentsbyadmin'])->name('addcommentsbyadmin');
         
         Route::get('/studycenter1', [StudycenterController::class, 'studycenter1'])->name('studycenter1');
         Route::post('/createstudycenter', [StudycenterController::class, 'createstudycenter'])->name('createstudycenter');
@@ -601,6 +617,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/teacheretired/{ref_no}', [TeacherController::class, 'teacheretired'])->name('teacheretired');
         Route::get('/teachertransfer/{ref_no}', [TeacherController::class, 'teachertransfer'])->name('teachertransfer');
         Route::put('/updatetransfersprinc/{ref_no}', [TeacherController::class, 'updatetransfersprinc'])->name('updatetransfersprinc');
+        Route::get('/addresultsad1/{ref_no}', [StudentController::class, 'addresultsad1'])->name('addresultsad1');
         
         
         Route::get('approvedstudents', [StudentController::class, 'approvedstudents'])->name('approvedstudents');
@@ -851,7 +868,7 @@ Route::prefix('teacher')->name('teacher.')->group(function() {
         
         Route::get('/viewclassesbyprinc/{classname}', [ClassnameController::class, 'viewclassesbyprinc'])->name('viewclassesbyprinc');
         Route::get('/tecacherviewresultbysubapproved', [ResultController::class, 'tecacherviewresultbysubapproved'])->name('tecacherviewresultbysubapproved');
-        Route::get('/addpsychomotorteacher1/{teacher_id}', [ResultController::class, 'addpsychomotorteacher1'])->name('addpsychomotorteacher1');
+        Route::get('/addpsychomotorteacher1/{id}', [ResultController::class, 'addpsychomotorteacher1'])->name('addpsychomotorteacher1');
         Route::post('/createdomain', [TeacherdomainController::class, 'createdomain'])->name('createdomain');
         Route::get('/tecacherdomainadd/{ref_no1}', [TeacherController::class, 'tecacherdomainadd'])->name('tecacherdomainadd');
         Route::get('addresults/{id}', [StudentController::class, 'addresults'])->name('addresults');

@@ -17,6 +17,10 @@ return new class extends Migration
         Schema::create('teacherassigns', function (Blueprint $table) {
             $table->id();
             $table->string('teacher_id');
+            $table->string('user_id')->nullable();
+            $table->string('school_id')->nullable();
+            $table->string('slug')->nullable();
+            
             $table->foreignIdFor(Subject::class)->constrained('subjects')->onDelete('cascade')->update('cascade');
             
             $table->string('fname')->nullable();

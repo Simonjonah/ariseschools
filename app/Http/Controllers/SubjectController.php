@@ -214,7 +214,7 @@ class SubjectController extends Controller
         $assigned_subject = Subject::find($id);
 
         $assigned_teacherto_subjects = Teacher::where('school_id', auth::guard('teacher')->user()->school_id
-        )->get();
+        )->whereNot('assign1', 'Principal')->get();
        
         $classnames = Classname::all();
 

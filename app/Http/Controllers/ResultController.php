@@ -16,10 +16,12 @@ use App\Models\Teacherdomain;
 use App\Models\Classname;
 use App\Models\Alm;
 use App\Models\Student;
-
+use App\Models\Teacher;
 use App\Models\Term;
 use PDF;
 use Illuminate\Support\Facades\Auth;
+use Svg\Tag\Rect;
+
 class ResultController extends Controller
 {
     public function createresults(Request $request){
@@ -98,6 +100,89 @@ class ResultController extends Controller
             }else{
 
                 $data = [];
+                $almes = $request->input('alms');
+                $signatures = $request->input('signature');
+                $subjectnames = $request->input('subjectname');
+                $test_1s = $request->input('test_1');
+                $test_2s = $request->input('test_2');
+                // $test_3s = $request->input('test_3');
+                $examss = $request->input('exams');
+                $school_ids = $request->input('school_id');
+                $teacher_ids = $request->input('teacher_id');
+                $user_ids = $request->input('user_id');
+                $slugs = $request->input('slug');
+                $academic_sessions = $request->input('academic_session');
+                $regnumbers = $request->input('regnumber');
+                $terms = $request->input('term');
+                $student_ids = $request->input('student_id');
+                $classnames = $request->input('classname');
+                $fnames = $request->input('fname');
+                $middlenames = $request->input('middlename');
+                $surnames = $request->input('surname');
+                $genders = $request->input('gender');
+                $motors = $request->input('motor');
+                $addresses = $request->input('address');
+                $logos = $request->input('logo');
+                $images_ds = $request->input('images');
+                $schoolnames = $request->input('schoolname');
+                $sections = $request->input('section');
+                $lgas = $request->input('lga');
+                // $slugs = $request->input('lga');
+                
+                
+                
+                    for ($i = 0; $i < count($subjectnames); $i++) {
+                        $data[] = [
+                            
+                            'alms' => $almes[$i],
+                            'signature' => $signatures[$i],
+                            'subjectname' => $subjectnames[$i],
+                            'test_1' => $test_1s[$i],
+                            'test_2' => $test_2s[$i],
+                            // 'test_3' => $test_3s[$i],
+                            'exams' => $examss[$i],
+                            'user_id' => $user_ids[$i],
+                            'school_id' => $school_ids[$i],
+                            'teacher_id' => $teacher_ids[$i],
+                            'slug' =>$slugs[$i],
+                            'logo' =>$logos[$i],
+                            'schoolname' =>$schoolnames[$i],
+            
+                            'academic_session' =>$academic_sessions[$i],
+                            'regnumber' =>$regnumbers[$i],
+                            'term' => $terms[$i],
+                            'student_id' => $student_ids[$i],
+                            'classname' => $classnames[$i],
+                            'fname' => $fnames[$i],
+                            'middlename' => $middlenames[$i],
+                            'surname' => $surnames[$i],
+                            'gender' => $genders[$i],
+                            'images' => $images_ds[$i],
+                            'address' => $addresses[$i],
+                            'motor' => $motors[$i],
+                            'section' => $sections[$i],
+                            'lga' => $lgas[$i],
+                            'total' => $test_1s[$i] + $test_2s[$i] + $examss[$i],
+    
+                            
+                        ];
+                    }
+            // dd($data);
+                    Result::insert($data);
+    
+
+               
+               
+            }
+
+       return redirect()->back()->with('success', 'you have added successfully');
+    }
+
+
+
+    public function createresultsadmin(Request $request){
+        if (Auth::guard('teacher')->user()->section == 'Primary') {
+            $data = [];
             $almes = $request->input('alms');
             $signatures = $request->input('signature');
             $subjectnames = $request->input('subjectname');
@@ -162,34 +247,88 @@ class ResultController extends Controller
                         'lga' => $lgas[$i],
                         'total' => $test_1s[$i] + $test_2s[$i] + $examss[$i],
 
-                       
+                        
                     ];
                 }
         // dd($data);
-        // $data = Result::first();
-        // $userArray = $data->toArray();
-        // dd($userArray);
-        //         Result::insert($data);
-               
-                // $collection = collect($data);
-
-                // $filteredData = $collection->where('regnumber', $regnumbers[$i]);
-                //  $sum0 = $filteredData->sum('test_1');
-                //  $sum1 = $filteredData->sum('test_2');
-                //  $sum2 = $filteredData->sum('test_3');
-                //  $sum3 = $filteredData->sum('exams');
-                //  $sum = $sum0 + $sum1 + $sum2 + $sum3;
-                 
-                //  var_dump($data);
-                //      Position::create([
-                //          'regnumber' => $request->regnumber,
-                //          'term' => $request->term,
-                //          'classname' => $request->classname,
-                //          'academic_session' => $request->academic_session,
-                //          'total_score' => $sum,
-                //      ]);
+                Result::insert($data);
         
+            }else{
 
+                $data = [];
+                $almes = $request->input('alms');
+                $signatures = $request->input('signature');
+                $subjectnames = $request->input('subjectname');
+                $test_1s = $request->input('test_1');
+                $test_2s = $request->input('test_2');
+                // $test_3s = $request->input('test_3');
+                $examss = $request->input('exams');
+                $school_ids = $request->input('school_id');
+                $teacher_ids = $request->input('teacher_id');
+                $user_ids = $request->input('user_id');
+                $slugs = $request->input('slug');
+                $academic_sessions = $request->input('academic_session');
+                $regnumbers = $request->input('regnumber');
+                $terms = $request->input('term');
+                $student_ids = $request->input('student_id');
+                $classnames = $request->input('classname');
+                $fnames = $request->input('fname');
+                $middlenames = $request->input('middlename');
+                $surnames = $request->input('surname');
+                $genders = $request->input('gender');
+                $motors = $request->input('motor');
+                $addresses = $request->input('address');
+                $logos = $request->input('logo');
+                $images_ds = $request->input('images');
+                $schoolnames = $request->input('schoolname');
+                $sections = $request->input('section');
+                $lgas = $request->input('lga');
+                // $slugs = $request->input('lga');
+                
+                
+                
+                    for ($i = 0; $i < count($subjectnames); $i++) {
+                        $data[] = [
+                            
+                            'alms' => $almes[$i],
+                            'signature' => $signatures[$i],
+                            'subjectname' => $subjectnames[$i],
+                            'test_1' => $test_1s[$i],
+                            'test_2' => $test_2s[$i],
+                            // 'test_3' => $test_3s[$i],
+                            'exams' => $examss[$i],
+                            'user_id' => $user_ids[$i],
+                            'school_id' => $school_ids[$i],
+                            'teacher_id' => $teacher_ids[$i],
+                            'slug' =>$slugs[$i],
+                            'logo' =>$logos[$i],
+                            'schoolname' =>$schoolnames[$i],
+            
+                            'academic_session' =>$academic_sessions[$i],
+                            'regnumber' =>$regnumbers[$i],
+                            'term' => $terms[$i],
+                            'student_id' => $student_ids[$i],
+                            'classname' => $classnames[$i],
+                            'fname' => $fnames[$i],
+                            'middlename' => $middlenames[$i],
+                            'surname' => $surnames[$i],
+                            'gender' => $genders[$i],
+                            'images' => $images_ds[$i],
+                            'address' => $addresses[$i],
+                            'motor' => $motors[$i],
+                            'section' => $sections[$i],
+                            'lga' => $lgas[$i],
+                            'total' => $test_1s[$i] + $test_2s[$i] + $examss[$i],
+    
+                            
+                        ];
+                    }
+            // dd($data);
+                    Result::insert($data);
+    
+
+               
+               
             }
 
        return redirect()->back()->with('success', 'you have added successfully');
@@ -482,15 +621,15 @@ class ResultController extends Controller
     public function searchresults(Request $request){
         $request->validate([
             'term' => ['required', 'string'],
-            'schoolname' => ['required', 'string'],
+            'school_id' => ['required', 'string'],
             'academic_session' => ['required', 'string'],
         ]);
         if($view_schholsresults = Result::where('term', $request->term)
-        ->where('schoolname', $request->schoolname)
+        ->where('school_id', $request->school_id)
         ->where('academic_session', $request->academic_session)
         ->exists()) {
             $view_schholsresults = Result::orderby('created_at', 'DESC')
-            ->where('schoolname', $request->schoolname)
+            ->where('school_id', $request->school_id)
             ->where('term', $request->term)
             ->where('academic_session', $request->academic_session)
             ->get(); 
@@ -504,31 +643,96 @@ class ResultController extends Controller
     
         public function searchresultsforclasses(Request $request){
             $request->validate([
-                'term' => ['required', 'string'],
-                'schoolname' => ['required', 'string'],
+                'regnumber' => ['required', 'string'],
                 'academic_session' => ['required', 'string'],
+                'term' => ['required', 'string'],
                 'classname' => ['required', 'string'],
+                'school_id' => ['nullable', 'string'],
+    
+            ], [
+                'regnumber.exist'=>'This email does not exist in the admins table'
             ]);
-            if($view_schholsresults = Result::where('term', $request->term)
-            ->where('schoolname', $request->schoolname)
-            ->where('academic_session', $request->academic_session)
+            if($getyour_results = Result::where('regnumber', $request->regnumber)
+            ->where('term', $request->term)
+            // ->where('section', $request->section)
             ->where('classname', $request->classname)
+            ->where('school_id', $request->school_id)
+            ->where('academic_session', $request->academic_session)
             ->exists()) {
-                $view_schholsresults = Result::orderby('created_at', 'DESC')
-                ->where('schoolname', $request->schoolname)
-                ->where('term', $request->term)
-                ->where('academic_session', $request->academic_session)
-                ->where('classname', $request->classname)
+            $getyour_results = Result::where('regnumber',  $request->regnumber
+            )->where('academic_session', $request->academic_session)
+           
+            ->where('classname', $request->classname)
+            ->where('term', $request->term)
+            ->where('school_id', $request->school_id)
+    
+            ->get();
+            }else{
+                return redirect()->back()->with('fail', 'There is no results for you!');
+            }
+    
+        
+            // dd($result);
+           $collection = collect($getyour_results);
+    
+           $filteredData = $collection->where('regnumber', $request->regnumber);
+            $sum0 = $filteredData->sum('test_1');
+            $sum1 = $filteredData->sum('test_2');
+            $sum2 = $filteredData->sum('test_3');
+            $sum3 = $filteredData->sum('exams');
+            $sum = $sum0 + $sum1 + $sum2 + $sum3;
+            // if ($request->term == null && $request->academic_session == null && $request->classname == null) {
+                Position::firstOrCreate([
+                    'regnumber' => $request->regnumber,
+                    'term' => $request->term,
+                    // 'school_id' => $getyour_results->school_id,
+                    'classname' => $request->classname,
+                    'academic_session' => $request->academic_session,
+                    'total_score' => $sum,
+                ]);
+          
+            
+            $studentpositions = Position::orderBy('total_score', 'DESC')->where('term', $request->term)
+            ->where('academic_session', $request->academic_session)
+            ->where('classname', $request->classname)->get();
+            
+            // $studentpos = Position::orderBy('total_score', 'Asc')->where('term', $request->term)
+            // ->where('academic_session', $request->academic_session)
+            // ->where('classname', $request->classname)
+            // ->where('total_score', $sum)->get();
+    
+            $rank = 1;
+            foreach ($studentpositions as $student) {
+                $student->update(['rank' => $rank] = ['rank' => $rank]);
+                $rank++;
+            }
+          
+            $rankedStudents = Position::orderBy('rank')->where('term', $request->term)
+            ->where('academic_session', $request->academic_session)
+            ->where('classname', $request->classname)->where('regnumber', $request->regnumber)->first();
+    
+            $total_subject = Result::where('academic_session', $request->academic_session)
+            ->where('term', $request->term)->count();
+    
+            $total_student = Result::where('academic_session', $request->academic_session)
+            ->where('term', $request->term)->count();
 
-                ->get(); 
-                }else{
-                    return view('dashboard.admin.noresult');
-                    //return redirect()->back()->with('fail', 'There is no students in these class!');
-                }
-                return view('dashboard.admin.yourschoolreults', compact('view_schholsresults'));
+            $getyour_resultsdomains = Studentdomain::where('academic_session', $request->academic_session)
+                ->where('term', $request->term)
+                // ->where('section', $request->section)
+                ->where('regnumber', $request->regnumber)
+                ->where('classname', $request->classname)
+                ->get();
+            
+              
+                return view('dashboard.admin.yourschoolreultsbyadmin', compact('rankedStudents', 'getyour_resultsdomains', 'getyour_results'));
         
             }
         
+            public function editviewresultsad($id){
+                $edit_results = Result::find($id);
+                return view('dashboard.admin.editviewresultsad', compact('edit_results'));
+            }
         
 
     public function viewresults($user_id){
@@ -671,8 +875,8 @@ class ResultController extends Controller
         return view('pages.resultterm', compact('getyour_resultsdomains', 'total_student', 'total_subject', 'getyour_results'));
     }
 
-    public function addpsychomotorteacher1($teacher_id){
-        $view_yourtudents = Result::where('teacher_id', $teacher_id)->first();
+    public function addpsychomotorteacher1($id){
+        $view_yourtudents = Result::where('id', $id)->first();
         $view_yourdomains = Domain::all();
         return view('dashboard.teacher.addpsychomotorteacher1', compact('view_yourdomains','view_yourtudents'));
     }
@@ -1134,7 +1338,10 @@ class ResultController extends Controller
                 ->count();
 
                 
-                $getyour_resultsdomains = Studentdomain::all();
+                $getyour_resultsdomains = Studentdomain::where('academic_session', $request->academic_session)
+                ->where('term', $request->term)
+                ->where('section', $request->section)
+                ->where('classname', $request->classname)->get();
                 if ($request->section == 'Primary') {
                     return view('dashboard.teacher.childresults', compact('rankedStudents', 'studentpositions', 'total_student', 'total_subject', 'getyour_resultsdomains', 'getyour_results'));
 
@@ -1335,7 +1542,27 @@ $rankedStudents = Position::orderBy('rank')->where('term', $request->term)
         $edit_results = Result::find($id);
         $request->validate([
             'test_1' => ['required', 'max:255'],
-            'test_3' => ['required', 'max:255'],
+            // 'test_3' => ['required', 'max:255'],
+            'test_2' => ['required', 'max:255'],
+            'exams' => ['required', 'max:255'],
+        ]);
+
+        $edit_results->test_1 = $request->test_1;
+        $edit_results->test_2 = $request->test_2;
+        $edit_results->test_3 = $request->test_3;
+        $edit_results->exams = $request->exams;
+        $edit_results->update();
+        return redirect()->back()->with('success', 'You have successfully edited result ');
+        
+    }
+
+
+    public function updateheresultadmin(Request $request, $id){
+        // dd($request->all());
+        $edit_results = Result::find($id);
+        $request->validate([
+            'test_1' => ['required', 'max:255'],
+            // 'test_3' => ['required', 'max:255'],
             'test_2' => ['required', 'max:255'],
             'exams' => ['required', 'max:255'],
         ]);
@@ -1381,6 +1608,30 @@ $rankedStudents = Position::orderBy('rank')->where('term', $request->term)
     
         }
 
+    public function addcommentadmin($id){
+        $add_comment = Result::find($id);
+        return view('dashboard.admin.addcommentadmin', compact('add_comment'));
+    }
+
+    public function addcommentsbyadmin(Request $request, $id){
+        $add_comment = Result::find($id);
+        $request->validate([
+            'headteacher_comment' => ['required'],
+        ]);
+        $add_comment->headteacher_comment = $request->headteacher_comment;
+        $add_comment->update();
+
+        return redirect()->back()->with('success', 'You have added comment to the result successfully');
+    }
+
+    public function analyseresult($slug){
+        $viewanalisis = Result::where('slug', $slug)->first();
+        $view_academcsessions = Academicsession::latest()->get();
+        $studentcount = Student::where('slug', $slug)->count();
+        $teachercount = Teacher::where('slug', $slug)->count();
+
+        return view('dashboard.admin.analyseresult', compact('teachercount', 'studentcount', 'view_academcsessions', 'viewanalisis'));
+    }
         
 }
 

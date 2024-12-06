@@ -588,7 +588,7 @@ public function searchclass(Request $request){
         ->where('classname', $request->classname)
         ->where('school_id', $request->school_id)
         ->where('section', $request->section)
-        ->where('alms', $request->alms)
+        // ->where('alms', $request->alms)
         ->exists()) {
             $view_primarypupils = Student::orderby('created_at', 'DESC')
             ->where('term', $request->term)
@@ -596,7 +596,7 @@ public function searchclass(Request $request){
             ->where('classname', $request->classname)
             ->where('school_id', $request->school_id)
             ->where('section', $request->section)
-            ->where('alms', $request->alms)
+            // ->where('alms', $request->alms)
             ->get(); 
             }else{
                 // return view('dashboard.teacher.noresult');
@@ -735,5 +735,35 @@ public function searchclass(Request $request){
         }
         
         
+    public function viewallstudentsadmin($slug){
+        $viewstudents = Student::where('slug', $slug)->latest()->get();
+        return view('dashboard.admin.viewallstudentsadmin', compact('viewstudents'));
+    }
+
+    public function viewsrejectedstudentsad($slug){
+        $viewstudents = Student::where('slug', $slug)->where('status', 'reject')->latest()->get();
+        return view('dashboard.admin.viewsrejectedstudentsad', compact('viewstudents'));
+    }
+
+    public function viewsuspendedstudentsad($slug){
+        $viewstudents = Student::where('slug', $slug)->where('status', 'suspend')->latest()->get();
+        return view('dashboard.admin.viewsuspendedstudentsad', compact('viewstudents'));
+    }
+
+
+    public function viewschoolsadmittedstudentad($slug){
+        $viewstudents = Student::where('slug', $slug)->latest()->get();
+        return view('dashboard.admin.viewschoolsadmittedstudentad', compact('viewstudents'));
+    }
+
+    
+    public function addresultsad1($ref_no){
+        $view_studentsubject = Student::where('ref_no', $ref_no)->first();
+         
+        $view_teachersubjects = Subject::all();
+    //    $view_teachersubjects = Teacherassign::where('teacher_id', auth::guard('web')->id())->get();
+        return view('dashboard.admin.addresultsad1', compact('view_teachersubjects','view_studentsubject'));
+    }
+
     
 }

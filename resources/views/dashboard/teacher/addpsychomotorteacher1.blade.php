@@ -114,6 +114,10 @@
                             <input type="hidden" name="student_id[]" value="{{ $view_yourtudents->student_id }}" id="">
                             <input type="hidden" name="ref_no1[]" value="{{ $view_yourdomain->ref_no1 }}" id="">
                             <input type="hidden" name="term[]" value="{{ Auth::guard('teacher')->user()->term }}" id="">
+                          <input type="hidden" name="regnumber[]" value="{{ $view_yourtudents->regnumber }}" id="">
+                          <input type="hidden" name="section[]" value="{{ $view_yourtudents->section }}" id="">
+                          <input type="hidden" name="academic_session[]" value="{{ $view_yourtudents->academic_session }}" id="">
+                          <input type="hidden" name="classname[]" value="{{ $view_yourtudents->classname }}" id="">
                             
                           </tr>
                         @else
@@ -125,9 +129,9 @@
     
                         
                       </table>
-                      {{-- <div class="form-group">
-                          <textarea class="form-control" name="teacher_comment[]" id="" cols="20" rows="5" placeholder="Teacher's Comment"></textarea>
-                      </div> --}}
+                      <div class="form-group">
+                          {{-- <textarea class="form-control" name="teacher_comment[]" id="" cols="20" rows="5" placeholder="Teacher's Comment"></textarea> --}}
+                      </div>
 
                       <div class="form-group">
                         {{-- <input class="form-control" name="nextterm" placeholder="Next term"> --}}
@@ -182,7 +186,12 @@
                           <input type="hidden" name="ref_no1[]" value="{{ $view_yourdomain->ref_no1 }}" id="">
                           <input type="hidden" name="term[]" value="{{ Auth::guard('teacher')->user()->term }}" id="">
                           <input type="hidden" name="psycomoto[]" value="{{ $view_yourdomain->psycomoto }}" id="">
-                          
+                          {{-- <input type="hidden" name="regnumber[]" value="{{ $view_yourtudents->regnumber }}" id=""> --}}
+                          <input type="hidden" name="regnumber[]" value="{{ $view_yourtudents->regnumber }}" id="">
+                          <input type="hidden" name="section[]" value="{{ $view_yourtudents->section }}" id="">
+                          <input type="hidden" name="academic_session[]" value="{{ $view_yourtudents->academic_session }}" id="">
+                          <input type="hidden" name="classname[]" value="{{ $view_yourtudents->classname }}" id="">
+                            
                         </tr>
                         @else
                         @endif
@@ -333,6 +342,11 @@
                             <input type="hidden" name="student_id[]" value="{{ $view_yourtudents->student_id }}" id="">
                             <input type="hidden" name="ref_no1[]" value="{{ $view_yourdomain->ref_no1 }}" id="">
                             <input type="hidden" name="term[]" value="{{ Auth::guard('teacher')->user()->term }}" id="">
+                          <input type="hidden" name="regnumber[]" value="{{ $view_yourtudents->regnumber }}" id="">
+                          {{-- <input type="hidden" name="regnumber[]" value="{{ $view_yourtudents->regnumber }}" id=""> --}}
+                          <input type="hidden" name="section[]" value="{{ $view_yourtudents->section }}" id="">
+                          <input type="hidden" name="academic_session[]" value="{{ $view_yourtudents->academic_session }}" id="">
+                          <input type="hidden" name="classname[]" value="{{ $view_yourtudents->classname }}" id="">
                             
                           </tr>
                         @else
@@ -344,12 +358,12 @@
     
                         
                       </table>
-                      {{-- <div class="form-group">
+                      <div class="form-group">
                           <textarea class="form-control" name="teacher_comment[]" id="" cols="20" rows="5" placeholder="Teacher's Comment"></textarea>
-                      </div> --}}
+                      </div>
 
                       <div class="form-group">
-                        {{-- <input class="form-control" name="nextterm" placeholder="Next term"> --}}
+                        <input class="form-control" name="nextterm" placeholder="Next term">
                     </div>
                 </div>
                
@@ -403,7 +417,13 @@
                           <input type="hidden" name="student_id[]" value="{{ $view_yourtudents->student_id }}" id="">
                           <input type="hidden" name="ref_no1[]" value="{{ $view_yourdomain->ref_no1 }}" id="">
                           <input type="hidden" name="term[]" value="{{ Auth::guard('teacher')->user()->term }}" id="">
-                          
+                          <input type="hidden" name="regnumber[]" value="{{ $view_yourtudents->regnumber }}" id="">
+                          <input type="hidden" name="section[]" value="{{ $view_yourtudents->section }}" id="">
+                          <input type="hidden" name="academic_session[]" value="{{ $view_yourtudents->academic_session }}" id="">
+                          <input type="hidden" name="classname[]" value="{{ $view_yourtudents->classname }}" id="">
+                            
+                          {{-- <input type="hidden" name="regnumber[]" value="{{ $view_yourtudents->regnumber }}" id=""> --}}
+
                         </tr>
                         @else
                         @endif

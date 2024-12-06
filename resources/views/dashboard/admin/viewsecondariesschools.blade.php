@@ -240,10 +240,10 @@
           <form action="{{ url('admin/reachresultbystudentbyadmin') }}" method="post">
             @csrf
             <div class="form-group">
-                <select name="schoolname" class="form-control" id="">
+                <select name="slug" class="form-control" id="">
                   
                     @foreach ($viewsecondaries as $viewsecondarie)
-                        <option value="{{ $viewsecondarie->schoolname }}">{{ $viewsecondarie->schoolname }}</option>
+                        <option value="{{ $viewsecondarie->slug }}">{{ $viewsecondarie->schoolname }}</option>
                     @endforeach
 
                 </select>
@@ -264,6 +264,7 @@
 
             <div class="form-group">
                 <select name="schooltype" class="form-control" id="">
+                  
                   <option value="SUBEB">SUBEB</option>
                     
                   <option value="SSEB">SSEB</option>

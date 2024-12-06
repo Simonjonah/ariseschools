@@ -3,12 +3,12 @@
     <!-- Brand Logo -->
     <a href="{{ url('admin/home') }}" class="brand-link">
     
-           <img src="{{ asset('assets/dist/img/aks.jpg') }}" alt="webLTE Logo" class="brand-image "
+           <img src="{{ asset('assets/dist/img/logo.jpg') }}" alt="webLTE Logo" class="brand-image "
            style="opacity: .8">
-           <img src="{{ asset('assets/dist/img/arise.jpg') }}" alt="webLTE Logo" class="brand-image "
+           {{-- <img src="{{ asset('assets/dist/img/arise.jpg') }}" alt="webLTE Logo" class="brand-image "
            style="opacity: .8">
-           <br>
-      <span class="brand-text font-weight-light"><br>ARISESCHOOLS </span>
+           <br> --}}
+      <span class="brand-text font-weight-light"><br>MYSCHOOL.AFRICA </span>
     </a>
     
       <?php
@@ -20,14 +20,14 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
         
-           <img src="{{ asset('assets/dist/img/aks.jpg') }}" alt="webLTE Logo" class="brand-image "
+           <img src="{{ asset('assets/dist/img/logo.jpg') }}" alt="webLTE Logo" class="brand-image "
            style="opacity: .8">
-           <img src="{{ asset('assets/dist/img/arise.jpg') }}" alt="webLTE Logo" class="brand-image "
+           {{-- <img src="{{ asset('assets/dist/img/arise.jpg') }}" alt="webLTE Logo" class="brand-image "
            style="opacity: .8">
-           <br>
+           <br> --}}
         </div>
         <div class="info">
-          <a href="{{ url('admin/profile') }}" class="d-block">{{ Auth::guard('admin')->user()->name }}</a>
+          <a href="{{ url('admin/profile') }}" class="d-block">Admin</a>
         </div>
       </div>
 
@@ -885,9 +885,10 @@
               
               <li class="nav-item">
              
-                <a href="{{ url('admin/viewresultbyadmins') }}" class="nav-link">
+                <a href="{{ url('admin/viewresultbylga') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View Results</p>
+                  {{-- viewresultbyadmins --}}
                 </a>
               </li>
               <li class="nav-item">
@@ -897,17 +898,17 @@
                 </a>
               </li>
 
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{ url('admin/viewallresults') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View All Results</p>
                 </a>
-              </li>
+              </li> --}}
                
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
+          {{-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
               <p>
@@ -928,7 +929,7 @@
                
             </ul>
           </li>
-         
+          --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

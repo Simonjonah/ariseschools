@@ -44,12 +44,11 @@
 			<div class="row clearfix">
 				@foreach ($primary_schools as $primary_school)
                 @if ($primary_school->status == 'admitted')
-                    <!-- News Block Three -->
 				<div class="news-block-three col-lg-3 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
 							<a href="{{ url('viewschoolsingle/'.$primary_school->slug) }}">
-								<img style="width: 50px; height: 50px;" src="{{ URL::asset("/public/../$primary_school->logo")}}" alt=""></a></h2></span>
+							<img style="width: 50px; height: 50px;" src="{{ URL::asset("/public/../$primary_school->logo")}}" alt=""></a></h2></span>
 						</div>
 						<div class="lower-content">
 							<ul class="post-meta">
@@ -57,7 +56,6 @@
 								<li><b>Location:</b> {{ $primary_school->address }} <span class="fa fa-user"></span></li>
 							</ul>
 							 <a href="{{ url('viewschoolsingle/'.$primary_school->slug) }}">
-
                     		<img style="height: 60px; border-radius: 50%;" src="logo" alt=""></a></h2></span>
 							<!-- <h4><?php //echo $primary_school['topic']; ?></h4> -->
 							<h4><a href="{{ url('viewschoolsingle/'.$primary_school->slug) }}">{{ $primary_school->schoolname }}</a></h4>

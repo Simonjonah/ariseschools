@@ -322,6 +322,24 @@ class ClassnameController extends Controller
         return view('dashboard.teacher.firstermresultsbyprincapproved ', compact('view_alms', 'view_sessions', 'view_terms', 'view_classes', 'view_student_abujas', 'view_myresults'));
     }
 
+    public function viewresultbygenadmin($classname, $slug){
+        $view_classes = Classname::where('classname', $classname)->first();
+        $schoolresults = Result::where('classname', $classname)->where('slug', $slug)->get();
+        $view_academcsessions  = Academicsession::all();
+        $view_byadminclasses = Classname::all();
+
+        return view('dashboard.admin.viewresultbygenadmin', compact('view_byadminclasses', 'view_academcsessions', 'view_classes', 'schoolresults'));
+    }
+
+
+    public function viewallstudentsadmin($classname, $slug){
+        $view_classes = Classname::where('classname', $classname)->first();
+        $viewstudents = Student::where('classname', $classname)->where('slug', $slug)->get();
+        $view_academcsessions  = Academicsession::all();
+        $view_byadminclasses = Classname::all();
+
+        return view('dashboard.admin.viewallstudentsadmin', compact('view_byadminclasses', 'view_academcsessions', 'view_classes', 'viewstudents'));
+    }
     
     
 }

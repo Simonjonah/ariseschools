@@ -229,7 +229,7 @@
           <div class="form-group">
             <label for="">School </label>
             <select class="form-control" name="school_id">
-                <option value="{{ Auth::guard('teacher')->user()->school_id }}">{{ Auth::guard('teacher')->user()->schoolname }}</option>
+                <option value="{{ Auth::guard('teacher')->user()->school['id'] }}">{{ Auth::guard('teacher')->user()->school['schoolname'] }}</option>
             </select>
           </div>
 
@@ -272,10 +272,9 @@
           <div class="form-group">
             <label for="">Terms</label>
             <select class="form-control" name="term">
-              @foreach ($view_terms as $view_term)
-                <option value="{{ $view_term->term }}">{{ $view_term->term }}</option>
-                
-              @endforeach
+                <option value="First Term">First Term</option>
+                <option value="Second Term">Second Term</option>
+                <option value="Third Term">Third Term</option>
             </select>
           </div>
 

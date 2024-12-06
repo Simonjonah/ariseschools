@@ -110,11 +110,9 @@
           <label for="">Term</label>
           <div class="input-group mb-3">
             <select name="term" required class="form-control" id="">
-                    <option value=""></option>
-                    <option value="First Term">First Term</option>
-                    <option value="Second Term">Second Term</option>
-                    <option value="Third Term">Third Term</option>
-                
+              <option value="First Term">First Term</option>
+              <option value="Second Term">Second Term</option>
+              <option value="Third Term">Third Term</option>
             </select>
             
           </div>
@@ -171,7 +169,7 @@
           <label for="">Select Section</label>
         <div class="input-group mb-3">
             <select required name="section" required class="form-control" id="">
-                @if ($getyours->schooltype == 'SSEB')
+                @if ($getyours->schooltype === 'SSEB')
                 <option value="Secondary">Secondary</option>
                   
                 @else

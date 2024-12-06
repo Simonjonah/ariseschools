@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->text('images')->nullable();
             $table->text('logo')->nullable();
+            $table->string('motor')->nullable();
+            
             $table->string('preclassname')->nullable();
             $table->string('age')->nullable();
             $table->string('state')->nullable();

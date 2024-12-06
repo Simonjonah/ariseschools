@@ -45,9 +45,9 @@
                 </div> 
                 <!-- /.col -->
                <div class="col-sm-10 invoice-col">
-                   <h2 style="text-transform: uppercase; text-align:center">{{ Auth::guard('teacher')->user()->schoolname }}</h2>
-                  <p style=" text-align:center">{{Auth::guard('teacher')->user()->address}}</p>
-                  <p style="text-align:center">{{Auth::guard('teacher')->user()->motor}}</p>
+                   <h2 style="text-transform: uppercase; text-align:center">{{ Auth::guard('teacher')->user()->school['schoolname'] }}</h2>
+                  <p style=" text-align:center">{{Auth::guard('teacher')->user()->school['address']}}</p>
+                  <p style="text-align:center">{{Auth::guard('teacher')->user()->school['motor']}}</p>
                 </div>
                 <!-- /.col -->
                 {{-- <div class="col-sm-2 invoice-col">
@@ -71,7 +71,7 @@
                         <th>Subjects</th>
                         <th>Ca 1</th>
                         <th>Ca 2</th>
-                        <th>Ca 3</th>
+                        {{-- <th>Ca 3</th> --}}
                         <th>Exams</th>
                         <th>Total</th>
                         <th>Grade</th>
@@ -109,7 +109,7 @@
                               </td>
                               <td>{{ $view_myresult_result->test_1 }}</td>
                               <td>{{ $view_myresult_result->test_2 }}</td>
-                              <td>{{ $view_myresult_result->test_3 }}</td>
+                              {{-- <td>{{ $view_myresult_result->test_3 }}</td> --}}
                               <td>{{ $view_myresult_result->exams }}
 
                               <small><a class="btn btn-success" href="{{ url('teacher/editresultsbyteacher/'.$view_myresult_result->id) }}">Edit Result</a></small>
@@ -144,7 +144,7 @@
                               <span class="badge badge-success">Admitted</span>
                               @endif</td>
                              
-                              <th> <a href="{{ url('teacher/addpsychomotorteacher1/'.$view_myresult_result->teacher_id) }}" class="btn btn-sm btn-primary">
+                              <th> <a href="{{ url('teacher/addpsychomotorteacher1/'.$view_myresult_result->id) }}" class="btn btn-sm btn-primary">
                                 <i class="fas fa-user">Add Psychomotor</i> 
                               </a></th>
 
@@ -316,12 +316,14 @@
           <div class="form-group">
             <label for=""> Sections</label>
             <select class="form-control" name="section">
+              @if (Auth::guard('teacher')->user()->schooltype == 'SUBEB')
                 <option value="Primary">Primary</option>
-                  
+               @else
                
-                <option value="Junior Secondary">Junior Secondary</option>
-                <option value="Senior Secondary">Senior Secondary</option>
-            
+               <option value="Junior Secondary">Junior Secondary</option>
+               <option value="Senior Secondary">Senior Secondary</option>
+            @endif
+     
             </select>
           </div>
 

@@ -86,7 +86,7 @@ table, tr, td{
 
         <tr>
             <th style="text-align: center; width: 120px; height: 100px; padding: 0px">
-                <img style="width: 100%; height: 50px;" src="{{ asset('public/../'.$getyour_result->logo) }}">
+                <img style="width: 100%; height: 100px;" src="{{ asset('public/../'.$getyour_result->logo) }}">
             </th>
            
             <th style="text-transform:uppercase; text-align: center; width: 450px;"><h1>{{ $getyour_result->school['schoolname'] }}</h1>
@@ -118,7 +118,7 @@ table, tr, td{
               <th>SUBJECTS OFFERED </th>
               <th>CONTINIEUS ASSESSMENT TEST 1</th>
               <th>CONTINIEUS ASSESSMENT TEST 2</th>
-              <th>CONTINIEUS ASSESSMENT TEST 3</th>
+              {{-- <th>CONTINIEUS ASSESSMENT TEST 3</th> --}}
               <th>EXAMINATION SCORES</th>
               <th>TOTAL</th>
               <th>-</th>
@@ -130,7 +130,7 @@ table, tr, td{
               <td>-</td>
               <td>10</td>
               <td>10</td>
-              <td>10</td>
+              {{-- <td>10</td> --}}
               <td>70</td>
               <td>100</td>
               <!-- <td>-</td> -->
@@ -148,7 +148,7 @@ table, tr, td{
                 <td>{{ $getyour_result->subjectname }}</td>
                 <td>{{ $getyour_result->test_1 }}</td>
                 <td>{{ $getyour_result->test_2 }}</td>
-                <td>{{ $getyour_result->test_3 }}</td>
+                {{-- <td>{{ $getyour_result->test_3 }}</td> --}}
                 <td>{{ $getyour_result->exams }}</td>
                 <td>{{ $getyour_result->test_1 + $getyour_result->test_2 + $getyour_result->test_3 + $getyour_result->exams}}</td>
                 <td>@if ($getyour_result->test_1 + $getyour_result->test_2 + $getyour_result->test_3 + $getyour_result->exams > 79)
@@ -193,8 +193,8 @@ table, tr, td{
                 {{-- <td>-</td> --}}
                 <td><b>{{ $total_score }}</b></td>
                 <!-- <td><b>-</b></td> -->
+                {{-- <td>-</td> --}}
                 <td>-</td>
-                <td></td>
                 <td>Grade</td>
 
               </tr>
@@ -437,7 +437,7 @@ table, tr, td{
                   @endif
                     <td>{{ $getyour_result->headteachercomment}}								
                     </td>
-                  {{-- <td><a class="btn btn-success" href="{{ url('teacher/addcommentsteachers/'.$getyour_result->id) }}">Add Comment</a></td> --}}
+                  <td><a class="btn btn-success" href="{{ url('teacher/addcommentsteachers/'.$getyour_result->id) }}">Add Comment</a></td>
                     <td>Signature: <img style="width: 50%; height: 50px;" src="{{ asset('public/../'.$getyour_result->signature) }}"> </td>
                 </tr>
         

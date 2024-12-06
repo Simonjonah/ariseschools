@@ -90,30 +90,30 @@
                            <span class="badge badge-success">Approved</span>
                            @endif</td>
                         <td><img style="width: 100%; height: 60px;" src="{{ URL::asset("/public/../$viewsecondarie->logo")}}" alt=""></td>
-                        <td><a href="{{ url('admin/viewschool/'.$viewsecondarie->ref_no1) }}"
+                        <td><a href="{{ url('admin/viewschools/'.$viewsecondarie->ref_no1) }}"
                             class='btn btn-default'>
                              <i class="far fa-eye"></i>
                          </a></td>
-                         <td><a href="{{ url('admin/editschool/'.$viewsecondarie->ref_no1) }}"
+                         <td><a href="{{ url('admin/editschools/'.$viewsecondarie->ref_no1) }}"
                           class='btn btn-info'>
                            <i class="far fa-edit"></i>
                        </a></td>
 
-                       <td><a href="{{ url('admin/schoolsaddmit/'.$viewsecondarie->ref_no1) }}"
+                       <td><a href="#"
                         class='btn btn-info'>
                         Approved
                      </a></td>
-                     <td><a href="{{ url('admin/rejectschool/'.$viewsecondarie->ref_no1) }}"
+                     <td><a href="#"
                         class='btn btn-danger'>
                         Reject                         
                      </a></td>
 
-                     <td><a href="{{ url('admin/suspendschool/'.$viewsecondarie->ref_no1) }}"
+                     <td><a href="#"
                         class='btn btn-warning'>
                         Suspend                         
                      </a></td>
 
-                     <td><a href="{{ url('admin/schooldelete/'.$viewsecondarie->ref_no1) }}"
+                     <td><a href="#"
                         class='btn btn-danger'>
                         <i class="far fa-trash-alt"></i>
                        

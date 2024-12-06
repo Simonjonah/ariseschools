@@ -47,9 +47,9 @@
                <div class="col-lg-8 col-md-6 col-sm-4 invoice-col" style="text-align: center">
                  
                 
-                <h1><strong>{{ $view_studentsubject->schoolname }}</strong></h1>
-                {{ $view_studentsubject->motor }} <br>
-                {{ $view_studentsubject->address }} <br>
+                <h1><strong style="text-transform: uppercase; font-size: 27px; ">{{ $view_studentsubject->school['schoolname'] }}</strong></h1>
+                {{ $view_studentsubject->school['motor'] }} <br>
+                {{ $view_studentsubject->school['address'] }} <br>
                 
                 </div>
                 <!-- /.col -->
@@ -242,7 +242,7 @@
                       <th>Subjects</th>
                       <th>Continus Assessment Test 1</th>
                       <th>Continus Assessment Test 2</th>
-                      <th>Continus Assessment Test 3</th>
+                      {{-- <th>Continus Assessment Test 3</th> --}}
                       <th>Examination Scores</th>
                         
                       </tr>
@@ -257,6 +257,7 @@
                                     <td><input type="text" class="form-control" name="test_2[]" placeholder="Test 2"></td>
                                     {{-- <td><input type="text" class="form-control" name="test_3[]" placeholder="Test 3"></td> --}}
                                     <td><input type="text" class="form-control" name="exams[]" placeholder="Examination Scores"></td>
+                                    
                                     <input type="hidden" name="signature[]" value="{{ Auth::guard('teacher')->user()->signature }}" placeholder="Teacher ID">
                                     <input type="hidden" name="lga[]" value="{{ Auth::guard('teacher')->user()->school['lga'] }}" placeholder="Teacher ID">
                                     <input type="hidden" name="teacher_id[]" value="{{ Auth::guard('teacher')->user()->id }}" placeholder="Teacher ID">
@@ -270,6 +271,7 @@
                                     <input type="hidden" name="term[]" value="{{ $view_studentsubject->term }}" placeholder="Term">
                                     <input type="hidden" name="academic_session[]" value="{{ $view_studentsubject->academic_session }}" placeholder="academic_session">
                                     <input type="hidden" name="regnumber[]" value="{{ $view_studentsubject->regnumber }}" placeholder="regnumber">
+                                    {{-- <input type="hidden" name="guardian_id[]" value="{{ $view_studentsubject->guardian_id }}" placeholder="Parent ID"> --}}
                                     <input type="hidden" name="classname[]" value="{{ $view_studentsubject->classname }}" placeholder="Parent ID">
                                     <input type="hidden" name="fname[]" value="{{ $view_studentsubject->fname }}" placeholder="Parent ID">
                                     <input type="hidden" name="middlename[]" value="{{ $view_studentsubject->middlename }}" placeholder="Parent ID">

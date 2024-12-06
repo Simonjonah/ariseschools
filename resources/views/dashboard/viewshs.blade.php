@@ -72,7 +72,7 @@
                         @if ($view_headmaster->slug == null)
                           <td>No HM/HS/PRINCIPAL</td>
                         @else
-                        <td><a href="{{ url('web/schoolstudent/'.$view_headmaster->slug) }}" target="_blank" rel="noopener noreferrer">{{ $view_headmaster->schoolname }}</a></td>
+                        <td><a href="{{ url('web/schoolstudent/'.$view_headmaster->slug) }}" target="_blank" rel="noopener noreferrer">{{ $view_headmaster->school['schoolname'] }}</a></td>
                           
                         @endif
                         <td>{{ $view_headmaster->phone }}
@@ -98,11 +98,11 @@
                         <td>{{ $view_headmaster->ref_no1 }}</td>
                         <td>{{ $view_headmaster->schooltype }}</td>
                         <td><img style="width: 100%; height: 60px;" src="{{ URL::asset("/public/../$view_headmaster->logo")}}" alt=""></td>
-                        <td><a href="{{ url('web/viewprim/'.$view_headmaster->ref_no1) }}"
+                        <td><a href="{{ url('web/viewprim/'.$view_headmaster->ref_no) }}"
                           class='btn btn-default'>
                            <i class="far fa-eye"></i>
                        </a></td>
-                       <td><a href="{{ url('web/editprim/'.$view_headmaster->ref_no1) }}"
+                       <td><a href="{{ url('web/editprim/'.$view_headmaster->ref_no) }}"
                         class='btn btn-info'>
                          <i class="far fa-edit"></i>
                      </a></td>
@@ -111,16 +111,16 @@
                           Action
                         </button>
                         <ul class="dropdown-menu">
-                          <li class="dropdown-item"><a href="{{ url('web/primsaddmit/'.$view_headmaster->ref_no1) }}">Approved</a></li>
-                          <li class="dropdown-item"><a href="{{ url('web/rejectprim/'.$view_headmaster->ref_no1) }}">Reject</a></li>
-                          <li class="dropdown-item"><a href="{{ url('web/suspendprim/'.$view_headmaster->ref_no1) }}">Suspend</a></li>
-                          <li class="dropdown-item"><a href="{{ url('web/tranferprim/'.$view_headmaster->ref_no1) }}">Transfer</a></li>
-                          <li class="dropdown-item"><a href="{{ url('web/retiredprim/'.$view_headmaster->ref_no1) }}">Retired</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/primsaddmit/'.$view_headmaster->ref_no) }}">Approved</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/rejectprim/'.$view_headmaster->ref_no) }}">Reject</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/suspendprim/'.$view_headmaster->ref_no) }}">Suspend</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/tranferprim/'.$view_headmaster->ref_no) }}">Transfer</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/retiredprim/'.$view_headmaster->ref_no) }}">Retired</a></li>
                         </ul>
                       </div></td>
                 
 
-                   <td><a href="{{ url('web/primdelete/'.$view_headmaster->ref_no1) }}"
+                   <td><a href="{{ url('web/primdelete/'.$view_headmaster->ref_no) }}"
                       class='btn btn-danger'>
                       <i class="far fa-trash-alt"></i>
                      
@@ -248,11 +248,11 @@
                         <td>{{ $view_headmaster->ref_no1 }}</td>
                         <td>{{ $view_headmaster->schooltype }}</td>
                         <td><img style="width: 100%; height: 60px;" src="{{ URL::asset("/public/../$view_headmaster->logo")}}" alt=""></td>
-                        <td><a href="{{ url('web/viewprim/'.$view_headmaster->ref_no1) }}"
+                        <td><a href="{{ url('web/viewprim/'.$view_headmaster->ref_no) }}"
                           class='btn btn-default'>
                            <i class="far fa-eye"></i>
                        </a></td>
-                       <td><a href="{{ url('web/editprim/'.$view_headmaster->ref_no1) }}"
+                       <td><a href="{{ url('web/editprim/'.$view_headmaster->ref_no) }}"
                         class='btn btn-info'>
                          <i class="far fa-edit"></i>
                      </a></td>
@@ -261,16 +261,16 @@
                           Action
                         </button>
                         <ul class="dropdown-menu">
-                          <li class="dropdown-item"><a href="{{ url('web/primsaddmit/'.$view_headmaster->ref_no1) }}">Approved</a></li>
-                          <li class="dropdown-item"><a href="{{ url('web/rejectprim/'.$view_headmaster->ref_no1) }}">Reject</a></li>
-                          <li class="dropdown-item"><a href="{{ url('web/suspendprim/'.$view_headmaster->ref_no1) }}">Suspend</a></li>
-                          <li class="dropdown-item"><a href="{{ url('web/tranferprim/'.$view_headmaster->ref_no1) }}">Transfer</a></li>
-                          <li class="dropdown-item"><a href="{{ url('web/retiredprim/'.$view_headmaster->ref_no1) }}">Retired</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/primsaddmit/'.$view_headmaster->ref_no) }}">Approved</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/rejectprim/'.$view_headmaster->ref_no) }}">Reject</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/suspendprim/'.$view_headmaster->ref_no) }}">Suspend</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/tranferprim/'.$view_headmaster->ref_no) }}">Transfer</a></li>
+                          <li class="dropdown-item"><a href="{{ url('web/retiredprim/'.$view_headmaster->ref_no) }}">Retired</a></li>
                         </ul>
                       </div></td>
                 
 
-                   <td><a href="{{ url('web/primdelete/'.$view_headmaster->ref_no1) }}"
+                   <td><a href="{{ url('web/primdelete/'.$view_headmaster->ref_no) }}"
                       class='btn btn-danger'>
                       <i class="far fa-trash-alt"></i>
                      

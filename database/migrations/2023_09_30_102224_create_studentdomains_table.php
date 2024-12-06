@@ -20,6 +20,11 @@ return new class extends Migration
             $table->string('punt1')->nullable();
             $table->string('teacher_id');
             $table->string('student_id');
+            
+            $table->string('regnumber')->nullable();
+            $table->string('classname')->nullable();
+            $table->string('academic_session')->nullable();
+            $table->string('section')->nullable();
             $table->string('ref_no1');
             $table->string('punt2')->nullable();
             $table->string('punt3')->nullable();

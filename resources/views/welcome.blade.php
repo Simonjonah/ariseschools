@@ -10,9 +10,9 @@
       <div class="slide" style="background-image:url('{{ URL::asset("/public/../$press_releases->images")}}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
         <div class="auto-container">
         <div class="content alternate">
-          <h1 class="alternate" style="text-shadow: 2px 2px #FFA500; color: #fff; border-style: solid;  border-color: #FFA500;">{{ $press_releases->title }}</h1>
+          <h1 class="alternate" style="color: #fff;">Myschool.Africa</h1>
           <div class="text alternate">messages</div>
-          {{-- <div class="text alternate"><a class="theme-btn btn-style-twelve" href="{{ url('press_single/'.$press_releases->slug)  }}">Continue Reading <span class="fa fa-angle-double-right"></span></a></div> --}}
+          <div class="text alternate"><a class="theme-btn btn-style-twelve" href="#">Continue Reading <span class="fa fa-angle-double-right"></span></a></div>
         </div>
         </div>
     </div>
@@ -31,8 +31,8 @@
 <div class="auto-container">
   <!-- Sec Title Two -->
   <div class="sec-title-two centered">
-    <div class="title" style="color: #046020">Services</div>
-    <h2 style="color: #046020">Arise Schools..., We bring School Activities to your steps</h2>
+    <div class="title">Services</div>
+    <h2>We Advertise your <br> Schools through  <span> our services</span></h2>
   </div>
   
   <div class="two-item-carousel owl-carousel owl-theme">
@@ -47,7 +47,7 @@
             <img src="{{ URL::asset("/public/../$schooladvert->logo")}}" alt="" />
           </div>
         </div>
-        <h5><a style="color: #046020; font-size: 20px;" href="{{ url('view_singleschool/'.$schooladvert->slug1)  }}">{{ $schooladvert->schoolname }}</a></h5>
+        <h5><a style="color: #6a592f; font-size: 20px;" href="{{ url('view_singleschool/'.$schooladvert->slug1)  }}">{{ $schooladvert->schoolname }}</a></h5>
         <div class="text"><a style="color: #000000; font-size: 20px;" href="{{ url('view_singleschool/'.$schooladvert->slug1)  }}">{{ $schooladvert->title }}</a></div>
       </div>
     </div>
@@ -69,7 +69,7 @@
   <!-- Sec Title -->
   <div class="sec-title centered" style="margin-top: 40px;">
     <!-- <div class="title">Press Release</div> -->
-    <h2 style="color: #046020">Our Recent added  Schools</h2>
+    <h2>Our Recent added  <span>Schools</span></h2>
   </div>
       
   <div class="row clearfix">
@@ -95,7 +95,7 @@
           <h4><a href="{{ url('viewschoolsingle/'.$school->slug) }}">{{ $school->schoolname }}</a></h4>
           {{-- <span><a href="{{ url('viewschoolsingle/'.$school->slug) }}">messages</a></span> --}}
 
-          <a style="background-color: #046020; color: #fff" class="btn" href="{{ url('viewschoolsingle/'.$school->slug) }}">Continue Reading <span class="fa fa-angle-double-right"></span></a>
+          <a class="btn btn-success" href="{{ url('viewschoolsingle/'.$school->slug) }}">Continue Reading <span class="fa fa-angle-double-right"></span></a>
         </div>
       </div>
     </div>
@@ -107,7 +107,7 @@
   
   </div>
   <div class="text-center">
-    <a style="background-color: #046020; color: #fff" href="{{ url('lgaschools') }}" class="btn btn-lg">View  Schools</a>
+    <a href="{{ url('lgaschools') }}" class="theme-btn btn-style-fourteen">View  Schools</a>
   </div>
 </div>
 </section>
@@ -121,7 +121,7 @@
 <section class="testimonial-section-two" style="margin-bottom: 80px; margin-top: 80px;">
 <div class="image-layer" style="background-image:url(images/background/bri2.jpg)"></div>
 <div class="auto-container">
-  <h2>Some of our latest events</h2>
+  <h2>Some of our latest <span>events</span></h2>
   <div class="testimonial-carousel-two owl-carousel owl-theme">
             @foreach ($events as $event)
                 @if ($event->status == 'approved')
@@ -235,7 +235,7 @@
               
               <div class="form-group col-lg-6 col-md-6 col-sm-12">
                 <button class="btn btn-success" type="submit" name="submitform">Submit now <span class="icon fa fa-angle-right"></span></button>
-              
+
 
               </div>
             </div>

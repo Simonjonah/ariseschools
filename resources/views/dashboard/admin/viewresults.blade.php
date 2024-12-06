@@ -75,7 +75,7 @@
                         <th>Subjects</th>
                         <th>Ca 1</th>
                         <th>Ca 2</th>
-                        <th>Ca 3</th>
+                       
                         <th>Exams</th>
                         <th>Total</th>
                         <th>Grade</th>
@@ -100,7 +100,6 @@
                               <td>{{ $view_myresult_result->subjectname }}</td>
                               <td>{{ $view_myresult_result->test_1 }}</td>
                               <td>{{ $view_myresult_result->test_2 }}</td>
-                              <td>{{ $view_myresult_result->test_3 }}</td>
                               <td>{{ $view_myresult_result->exams }}</td>
                               <td>{{ $view_myresult_result->test_1  + $view_myresult_result->test_2  + $view_myresult_result->test_3  + $view_myresult_result->exams }}</td>
                               <td>@if ($view_myresult_result->test_1 + $view_myresult_result->test_2 + $view_myresult_result->test_3 + $view_myresult_result->exams > 69)

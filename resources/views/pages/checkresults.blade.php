@@ -88,13 +88,9 @@
         <label for="">Select Term</label>
           <div class="input-group mb-3">
             <select name="term" class="form-control" id="">
-                 @foreach ($getyours as $getyour)
-                    <option value="{{ $getyour->term }}">{{ $getyour->term }}</option>
-                @endforeach
-
-                <!-- <option value="First Term">First Term</option>
+               <option value="First Term">First Term</option>
                 <option value="Second Term">Second Term</option>
-                <option value="Third Term">Third Term</option> -->
+                <option value="Third Term">Third Term</option>
             </select>
             
           </div>

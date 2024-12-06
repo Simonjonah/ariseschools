@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('transferteacher')->nullable();
             $table->string('assign1')->nullable();
+            $table->string('ref_no10')->nullable();
             
             $table->string('motor')->nullable();
             $table->string('ref_no')->nullable();

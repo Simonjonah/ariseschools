@@ -142,7 +142,6 @@
           <div class="input-group mb-3">
             <select name="lga" required class="form-control" id="">
                 @foreach ($lgas as $lga)
-                    <option value=""></option>
                     <option value="{{ $lga->lga }}">{{ $lga->lga }}</option>
                 @endforeach
                 
@@ -156,7 +155,6 @@
           <label for="">Term</label>
           <div class="input-group mb-3">
             <select name="term" required class="form-control" id="">
-                    <option value=""></option>
                     <option value="First Term">First Term</option>
                     <option value="Second Term">Second Term</option>
                     <option value="Third Term">Third Term</option>

@@ -49,10 +49,22 @@
                     @endif
                 @method('PUT')
 
-                
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="">Test One</label>
+
+                    <input type="text" name="test_1" class="form-control" @error('test_1')
+                    @enderror placeholder="Test 3" value="{{ $edit_results->test_1 }}">
+                  </div>
+                  @error('test_1')
+                <span class="text-danger">{{ $message }}</span>
+              @enderror
+              </div>
            
             <div class="card-body">
                   <div class="form-group">
+                    <label for="">Test Two</label>
+
                     <input type="text" name="test_2" class="form-control" @error('test_2')
                     @enderror placeholder="Test 2" value="{{ $edit_results->test_2 }}">
                   </div>
@@ -61,7 +73,7 @@
               @enderror
               </div>
 
-              <div class="card-body">
+              {{-- <div class="card-body">
                   <div class="form-group">
                     <input type="text" name="test_3" class="form-control" @error('test_3')
                     @enderror placeholder="Test 1" value="{{ $edit_results->test_3 }}">
@@ -69,20 +81,13 @@
                   @error('test_3')
                 <span class="text-danger">{{ $message }}</span>
               @enderror
-              </div>
+              </div> --}}
+
+              
 
               <div class="card-body">
                   <div class="form-group">
-                    <input type="text" name="test_1" class="form-control" @error('test_1')
-                    @enderror placeholder="Test 3" value="{{ $edit_results->test_1 }}">
-                  </div>
-                  @error('test_1')
-                <span class="text-danger">{{ $message }}</span>
-              @enderror
-              </div>
-
-              <div class="card-body">
-                  <div class="form-group">
+                    <label for="">Exams</label>
                     <input type="text" name="exams" class="form-control" @error('exams')
                     @enderror placeholder="Exams" value="{{ $edit_results->exams }}">
                   </div>

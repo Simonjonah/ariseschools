@@ -20,6 +20,10 @@ class StudentdomainController extends Controller
          $punt3s = $request->input('punt3');
          $punt4s = $request->input('punt4');
          $punt5s = $request->input('punt5');
+         $regnumbers = $request->input('regnumber');
+         $academic_sessions = $request->input('academic_session');
+         $sections = $request->input('section');
+         $classnames = $request->input('classname');
          
          
          
@@ -38,6 +42,10 @@ class StudentdomainController extends Controller
                  'punt3' => $punt3s[$i],
                  'punt4' => $punt4s[$i],
                  'punt5' => $punt5s[$i],
+                 'regnumber' => $regnumbers[$i],
+                 'academic_session' => $academic_sessions[$i],
+                 'classname' => $classnames[$i],
+                 'section' => $sections[$i],
                  'ref_no' => substr(rand(0,time()),0, 9),
                  'connect' => substr(rand(0,time()),0, 9),
                  

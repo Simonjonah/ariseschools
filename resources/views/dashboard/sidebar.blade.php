@@ -24,11 +24,11 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ url('web/home') }}" class="brand-link">
-      <img src="{{ asset('assets/dist/img/aks.jpg') }}" alt="webLTE Logo" class="brand-image "
+      <img src="{{ asset('assets/dist/img/logo.jpg') }}" alt="webLTE Logo" class="brand-image "
            style="opacity: .8">
-           <img src="{{ asset('assets/dist/img/arise.jpg') }}" alt="webLTE Logo" class="brand-image "
+           {{-- <img src="{{ asset('assets/dist/img/arise.jpg') }}" alt="webLTE Logo" class="brand-image "
            style="opacity: .8">
-           <br>
+           <br> --}}
       <span class="brand-text font-weight-light">{{ Auth::guard('web')->user()->schooltype }}</span>
     </a>
 
@@ -36,11 +36,11 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('assets/dist/img/aks.jpg') }}" alt="webLTE Logo" class="brand-image "
+          <img src="{{ asset('assets/dist/img/logo.jpg') }}" alt="webLTE Logo" class="brand-image "
            style="opacity: .8">
         </div>
         <div class="info">
-          <a href="{{ url('web/profile/'.Auth::guard('web')->user()->ref_no1) }}" class="d-block">{{ Auth::guard('web')->user()->fname }}</a>
+          <a href="{{ url('web/profile/'.Auth::guard('web')->user()->ref_no1) }}" class="d-block">{{ Auth::guard('web')->user()->schooltype }}</a>
         </div>
       </div>
 
@@ -234,7 +234,7 @@
               <p>
                 HM/HS
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -264,7 +264,7 @@
               <p>
                 Subjects
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -296,7 +296,7 @@
               <p>
                 Classes
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">46</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -354,7 +354,7 @@
               <p>
                 Alms 
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -411,7 +411,7 @@
               <p>
                  Psychomotors 
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">
