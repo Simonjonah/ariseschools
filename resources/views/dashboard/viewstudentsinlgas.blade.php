@@ -231,10 +231,10 @@
           <form action="{{ url('web/reachresultbystudentschead') }}" method="post">
             @csrf
             <div class="form-group">
-                <select name="schoolname" class="form-control" id="">
+                <select name="school_id" class="form-control" id="">
                   
                     @foreach ($view_secondarystudents as $view_secondarystudent)
-                        <option value="{{ $view_secondarystudent->school['schoolname'] }}">{{ $view_secondarystudent->school['schoolname'] }}</option>
+                        <option value="{{ $view_secondarystudent->school_id }}">{{ $view_secondarystudent->school['schoolname'] }}</option>
                     @endforeach
 
                 </select>
@@ -242,7 +242,7 @@
 
             <div class="form-group">
               <select name="classname" class="form-control" id="">
-              <option value="">Select Classname (Optional)</option>
+              {{-- <option value="">Select Classname (Optional)</option> --}}
 
               @if (Auth::user()->schooltype == 'SUBEB')
                 @foreach ($view_classes as $view_classe)
@@ -276,14 +276,14 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <select name="lga" class="form-control" id="">
                     @foreach ($lgas as $lga)
                         <option value="{{ $lga->lga }}">{{ $lga->lga }}</option>
                     @endforeach
 
                 </select>
-            </div>
+            </div> --}}
 
             <div class="form-group">
                 <select name="term" class="form-control" id="">

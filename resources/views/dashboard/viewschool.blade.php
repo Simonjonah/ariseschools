@@ -157,10 +157,10 @@ l            <ol class="breadcrumb float-sm-right">
                         <div class="form-group">
                         <a href="{{ url('web/viewschoolsinlgas/'.$view_schools->lga) }}" class="btn btn-primary">Back</a> 
                         <a href="{{ url('web/schoolsteachers/'.$view_schools->slug) }}" class="btn btn-secondary">View Teachers</a> 
-                        <a href="{{ url('web/schoolsstudents/'.$view_schools->slug) }}" class="btn btn-default">View Students/Pupils</a> 
+                        <a href="{{ url('web/schoolsstudentsclassbyboard/'.$view_schools->slug) }}" class="btn btn-default">View Students/Pupils</a> 
                         <a href="{{ url('web/schoolsprinteachers/'.$view_schools->slug) }}" class="btn btn-success">View HM/HS/Principals</a> 
                         <!-- <a href="{{ url('web/schoolsresults/'.$view_schools->slug) }}" class="btn btn-info">View Results</a>  -->
-                            <a href="{{ url('web/viewsingleschoolsresult/'.$view_schools->slug) }}" class="btn btn-primary">View  School Results</a> 
+                            <a href="{{ url('web/schoolsresultsclassbyboard/'.$view_schools->slug) }}" class="btn btn-primary">View  School Results</a> 
 
                         </div>
                       </div>

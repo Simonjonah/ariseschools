@@ -175,26 +175,26 @@
 <!-- ./wrapper -->
 
 
-<script src="../../assets/plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 
-<script src="../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-<script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../../assets/plugins/jszip/jszip.min.js"></script>
-<script src="../../assets/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../../assets/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
-<script src="../../assets/dist/js/adminlte.min.js?v=3.2.0"></script>
+<script src="{{ asset('assets/dist/js/adminlte.min.js?v=3.2.0') }}"></script>
 
-<script src="../../assets/dist/js/demo.js"></script>
+<script src="{{ asset('assets/dist/js/demo.js') }}"></script>
 
 <script>
   $(function () {
@@ -230,10 +230,10 @@
           <form action="{{ url('web/reachresultbystudentschead') }}" method="post">
             @csrf
             <div class="form-group">
-                <select name="schoolname" class="form-control" id="">
+                <select name="school_id" class="form-control" id="">
                   
                     @foreach ($viewschool_students as $viewschool_student)
-                        <option value="{{ $viewschool_student->school['schoolname'] }}">{{ $viewschool_student->school['schoolname'] }}</option>
+                        <option value="{{ $viewschool_student->school_id }}">{{ $viewschool_student->school['schoolname'] }}</option>
                     @endforeach
 
                 </select>
@@ -252,30 +252,13 @@
 
             <div class="form-group">
               <select name="classname" class="form-control" id="">
-              <option value="">Select Classname (Optional)</option>
+              {{-- <option value="">Select Classname (Optional)</option> --}}
 
-              @if (Auth::user()->schooltype == 'SUBEB')
-                @foreach ($view_classes as $view_classe)
-
-                      @if ($view_classe->section == 'Primary')
-                        <option value="{{ $view_classe->classname }}">{{ $view_classe->classname }}</option>
-                      @else
-                        
-                      @endif
-                @endforeach
-              @else
-              
-                @foreach ($view_classes as $view_classe)
-                    <!-- <option value="">Select Classname (Optional)</option> -->
-
-                      @if ($view_classe->section == 'Secondary')
-                        <option value="{{ $view_classe->classname }}">{{ $view_classe->classname }}</option>
-                      @else
-                        
-                      @endif
-                @endforeach
-              @endif
-             
+              {{-- @if (Auth::user()->schooltype == 'SUBEB') --}}
+                  <option value="{{ $view_classes->classname }}">{{ $view_classes->classname }}</option>
+              {{-- @endif
+              <option value="{{ $view_classes->classname }}">{{ $view_classes->classname }}</option>
+              --}}
 
               </select>
           </div>
@@ -289,18 +272,17 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <select name="lga" class="form-control" id="">
                     @foreach ($lgas as $lga)
                         <option value="{{ $lga->lga }}">{{ $lga->lga }}</option>
                     @endforeach
 
                 </select>
-            </div>
+            </div> --}}
 
             <div class="form-group">
                 <select name="term" class="form-control" id="">
-                <option value="">Select Term (Optional)</option>
 
                 <option value="First term">First term</option>
                 <option value="Second Term">Second Term</option>

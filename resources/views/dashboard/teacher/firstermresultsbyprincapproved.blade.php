@@ -329,8 +329,9 @@
           <div class="form-group">
             <label for="">Terms</label>
             <select class="form-control" name="term">
-              @foreach ($view_terms as $view_term)
-                <option value="{{ $view_term->term }}">{{ $view_term->term }}</option>
+                <option value="First Term">First Term</option>
+                <option value="Second Term">Second Term</option>
+                <option value="First Term">First Term</option>
                 
               @endforeach
             </select>
@@ -379,92 +380,3 @@
 
 
 
-
-
-
-<div class="modal-body">
-        <form action="{{ url('teacher/searchforstudentresult') }}" method="post">
-          @csrf
-          <div class="form-group">
-            <label for="">School </label>
-            <select class="form-control" name="school_id">
-                <option value="{{ Auth::guard('teacher')->user()->school_id }}">{{ Auth::guard('teacher')->user()->school['schoolname'] }}</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="">Classes</label>
-            <select class="form-control" name="classname">
-              @foreach ($view_myresults as $view_myresult)
-                <option value="{{ $view_myresult->classname }}">{{ $view_myresult->classname }}</option>
-                
-              @endforeach
-            </select>
-          </div>
-
-          
-          <div class="form-group">
-            <label for="">Reg. number</label>
-            <select class="form-control" name="regnumber">
-              @foreach ($view_myresults as $view_myresult)
-                <option value="{{ $view_myresult->regnumber }}">{{ $view_myresult->section }} {{ $view_myresult->surname }} {{ $view_myresult->fname }} {{ $view_myresult->classname }} {{ $view_myresult->regnumber }}</option>
-                
-              @endforeach
-            </select>
-          </div>
-
-
-          <div class="form-group">
-            <label for="">Alms Optional</label>
-            <select class="form-control" name="alms">
-                <option value="">Select Alms optional</option>
-
-              @foreach ($view_myresults as $view_myresult)
-                <option value="{{ $view_myresult->alms }}">{{ $view_myresult->alms }}</option>
-              @endforeach
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="">Terms</label>
-            <select class="form-control" name="term">
-              @foreach ($view_myresults as $view_myresult)
-                <option value="{{ $view_myresult->term }}">{{ $view_myresult->term }}</option>
-                
-              @endforeach
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="">Academic Session</label>
-            <select class="form-control" name="academic_session">
-              @foreach ($view_myresults as $view_myresult)
-                <option value="{{ $view_myresult->academic_session }}">{{ $view_myresult->academic_session }}</option>
-                
-              @endforeach
-            </select>
-          </div>
-
-          
-          <div class="form-group">
-            <label for=""> Sections</label>
-            <select class="form-control" name="section">
-                <option value="Primary">Primary</option>
-                <option value="Junior Secondary">Junior Secondary</option>
-                <option value="Senior Secondary">Senior Secondary</option>
-            </select>
-          </div>
-
-          <div class="modal-footer justify-content-between">
-            <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Search</button>
-          </div>
-        </form>
-      </div>
-      
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->

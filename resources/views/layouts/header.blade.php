@@ -62,7 +62,8 @@
 								<ul class="navigation clearfix">
 									<li><a href="{{ url('/') }}">Home</a></li>
 									<li><a href="{{ url('about') }}">About Us</a></li>
-									<li><a href="{{ url('lgaschools') }}">Schools</a></li>
+									{{-- <li><a href="{{ url('lgaschools') }}">Schools</a></li> --}}
+									<li><a href="{{ url('vtu') }}">Utility Bills</a></li>
 	
 									{{-- <li class="dropdown"><a href="#"> Update</a>
 										<ul>
@@ -93,7 +94,7 @@
 									<ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
 										<li class="panel-outer">
 											<div class="form-container">
-												<form method="post" action="http://themexriver.com/tfhtml/finano/blog.html">
+												<form method="post" action="">
 													<div class="form-group">
 														<input type="search" name="field-name" value="" placeholder="Search Here" required>
 														<button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
@@ -139,8 +140,9 @@
                             <ul class="navigation clearfix">
 								<li><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="{{ url('about') }}">About Us</a></li>
+								<li><a href="{{ url('vtu') }}">Utility Bills</a></li>
 								
-								<li><a href="{{ url('lgaschools') }}"> Schools</a></li>
+								{{-- <li><a href="{{ url('lgaschools') }}"> Schools</a></li> --}}
 								{{-- <li><a href="{{ url('primaryschools') }}">Primary Schools</a></li> --}}
 
                                 {{-- <li class="dropdown"><a href="#">Schools Update</a>
@@ -151,7 +153,7 @@
                                 </li> --}}
 
                             
-                                <li><a href="{{ url('services1') }}">Services</a></li>
+                                <li><a href="{{ url('services2') }}">Services</a></li>
                             
                             <li><a href="{{ url('contact') }}">Contact us</a></li>
                             <li><a href="{{ url('checkresults') }}">Check Results</a></li>

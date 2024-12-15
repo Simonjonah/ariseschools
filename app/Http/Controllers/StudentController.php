@@ -641,24 +641,24 @@ public function searchclass(Request $request){
         public function reachresultbystudentschead(Request $request){
             // dd($request->all());
             $request->validate([
-                // 'classname' => ['nullable', 'string'],
-                'schoolname' => ['required', 'string'],
-                'lga' => ['required', 'string'],
-                'alms' => ['nullable', 'string'],
+                'classname' => ['nullable', 'string'],
+                'school_id' => ['required', 'string'],
+                // 'lga' => ['required', 'string'],
+                // 'alms' => ['nullable', 'string'],
                 'academic_session' => ['required', 'string'],
                 'section' => ['required', 'string'],
             ]);
-            if($view_secondarystudents = Student::where('schoolname', $request->schoolname)
-            ->where('lga', $request->lga)
-            ->where('alms', $request->alms)
+            if($view_secondarystudents = Student::where('school_id', $request->school_id)
+            // ->where('lga', $request->lga)
+            // ->where('alms', $request->alms)
             ->where('academic_session', $request->academic_session)
             ->where('section', $request->section)
             ->exists()) {
                 $view_secondarystudents = Student::orderby('created_at', 'DESC')
-                ->where('schoolname', $request->schoolname)
-                // ->where('classname', $request->classname)
-                ->where('lga', $request->lga)
-                    ->where('alms', $request->alms)
+                ->where('school_id', $request->school_id)
+                ->where('classname', $request->classname)
+                // ->where('lga', $request->lga)
+                    // ->where('alms', $request->alms)
                     ->where('academic_session', $request->academic_session)
                     ->where('section', $request->section)
                 ->get(); 

@@ -26,41 +26,54 @@
     </div>
 </section>
 
-<!-- Testimonial Section Three #6a592f; -->
-<section class="testimonial-section-three">
-<div class="auto-container">
-  <!-- Sec Title Two -->
-  <div class="sec-title-two centered">
-    <div class="title">Services</div>
-    <h2>We Advertise your <br> Schools through  <span> our services</span></h2>
-  </div>
-  
-  <div class="two-item-carousel owl-carousel owl-theme">
-    @foreach ($schooladverts as $schooladvert)
-      @if ($schooladvert->status == 'approved')
-                
-    <div class="testimonial-block-four">
-      <div class="inner-box">
-        <div class="quote-icon flaticon-double-quotes"></div>
-        <div class="image-outer">
-          <div class="image">
-            <img src="{{ URL::asset("/public/../$schooladvert->logo")}}" alt="" />
+
+
+
+<!-- Services Section Three-->
+<section class="services-section-three">
+  <div class="auto-container">
+    <div class="row clearfix">
+
+      <!-- Services Block -->
+      <div class="services-block-three style-two col-lg-4 col-md-6 col-sm-12">
+        <div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
+          <div class="icon-box">
+            <span class="icon flaticon-bar-chart"></span>
           </div>
+          <h6><a href="#">Our Mission Statement</a></h6>
+          <div class="text">To be the best leading community of leaders where everyone is committed and responsible for the development of the child academically, socially and morally while preparing them towards becoming dynamic future leaders.</div>
         </div>
-        <h5><a style="color: #6a592f; font-size: 20px;" href="{{ url('view_singleschool/'.$schooladvert->slug1)  }}">{{ $schooladvert->schoolname }}</a></h5>
-        <div class="text"><a style="color: #000000; font-size: 20px;" href="{{ url('view_singleschool/'.$schooladvert->slug1)  }}">{{ $schooladvert->title }}</a></div>
       </div>
+
+      <!-- Services Block -->
+      <div class="services-block-three style-two col-lg-4 col-md-12 col-sm-12">
+        <div class="inner-box wow fadeIn" data-wow-delay="600ms" data-wow-duration="1500ms">
+          <div class="icon-box">
+            <span class="icon flaticon-student"></span>
+          </div>
+          <h6><a href="#">Our Objectives</a></h6>
+          <div class="text">The argument in favor of using filler text goes some labore et dolore magna aliqua consectetur.</div>
+        </div>
+      </div>
+
+      <!-- Services Block -->
+      <div class="services-block-three style-two col-lg-4 col-md-6 col-sm-12">
+        <div class="inner-box wow fadeIn" data-wow-delay="300ms" data-wow-duration="1500ms">
+          <div class="icon-box">
+            <span class="icon flaticon-creativity"></span>
+            <!-- <span class="icon flaticon-board"></span> -->
+          </div>
+          <h6><a href="#">Our Vission</a></h6>
+          <div class="text">To produce very responsible, inquisitive, professional and socially aware children with super brains who would possess strong competence essential for academic success, professionalism and leadership in the leading creative world.</div>
+        </div>
+      </div>
+
+      
+
     </div>
-        @else
-            
-        @endif
-    
-    @endforeach
-</div>
+  </div>
 </section>
-
-
-<!-- Services Section Four -->
+<!-- About Section Four -->
 
 
 <!-- RECSNTE SCHOOL UPDATE -->

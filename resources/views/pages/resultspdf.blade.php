@@ -500,7 +500,7 @@ table, tr, td{
 
                 <tr>
                     <td style="font-size: 20px;"><b>Head Teacher's Comment</b></td>
-                    <td style="font-size: 20px;">{{ $getyour_result->headteachercomment}}								
+                    <td style="font-size: 20px;">{{ $getyour_result->headteacher_comment}}								
                     </td>
                 <td style="font-size: 20px; height: 90px"><b>Signature:</b> <img style="width: 100%; height: 100%" src="{{ URL::asset("/public/../$getyour_result->signature")}}"></td>
                 </tr>

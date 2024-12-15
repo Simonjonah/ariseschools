@@ -485,4 +485,19 @@ public function search(Request $request)
 }
 
 
+public function schoolsresultsclassbyboard($slug){
+    $view_school = School::where('slug', $slug)->first();
+    $view_classes = Classname::all();
+    return view('dashboard.schoolsresultsclassbyboard', compact('view_classes', 'view_school'));
+}
+
+public function schoolsstudentsclassbyboard($slug){
+    $view_school = School::where('slug', $slug)->first();
+    $view_classes = Classname::all();
+    return view('dashboard.schoolsstudentsclassbyboard', compact('view_classes', 'view_school'));
+}
+
+
+
+
 }

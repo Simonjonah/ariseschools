@@ -918,32 +918,33 @@ class ResultController extends Controller
 
   
 
-    public function schoolsresults(){
-        $view_resultalls = Result::where('user_id', auth::guard('web')->id())->get();
-        $view_classes = Classname::all();
-        return view('dashboard.schoolsresults', compact('view_classes', 'view_resultalls'));
-    }
+    // public function schoolsresults(){
+    //     $view_resultalls = Result::where('user_id', auth::guard('web')->id())->get();
+    //     $view_classes = Classname::all();
+    //     return view('dashboard.schoolsresults', compact('view_classes', 'view_resultalls'));
+    // }
 
     
     public function reachresultbysc(Request $request){
         $request->validate([
-            'schoolname' => ['required', 'string'],
+            'school_id' => ['required', 'string'],
             'classname' => ['required', 'string'],
             'academic_session' => ['required', 'string',],
             'term' => ['required', 'string',],
 
         ], [
-            'schoolname.exist'=>'This email does not exist in the admins table'
+            'school_id.exist'=>'This email does not exist in the admins table'
         ]);
+        // dd($request);
         if($view_allresults = Result::where('classname', $request->classname)
         ->where('term', $request->term)
-        ->where('schoolname', $request->schoolname)
+        ->where('school_id', $request->school_id)
         ->where('academic_session', $request->academic_session)
         ->exists()) {
         $view_allresults = Result::where('user_id', auth::guard('web')->id()
         )
         ->where('term', $request->term)
-        ->where('schoolname', $request->schoolname)
+        ->where('school_id', $request->school_id)
         ->where('classname', $request->classname)
         ->where('academic_session', $request->academic_session)->get();
         }else{

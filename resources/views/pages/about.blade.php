@@ -72,8 +72,8 @@
 			<!-- Content Column -->
 			<div class="image-column col-lg-5 col-md-12 col-sm-12">
 				<div class="inner-column">
-					<div class="image-1"><img src="{{ asset('images/resource/bsch2.jpg') }}" alt=""></div>
-					<div class="image-2"><img src="{{ asset('images/resource/bsch2.jpg') }}" alt=""></div>
+					<div class="image-1"><img src="{{ asset('images/background/bri2.jpg') }}" alt=""></div>
+					<div class="image-2"><img src="{{ asset('images/background/bri2.jpg') }}" alt=""></div>
 				</div>
 			</div>
 

@@ -48,7 +48,7 @@
                             <div class="col-md-3">
                                 <div class="card card-primary">
                                   <div class="card-header">
-                                    <h3 class="card-title"><a href="{{ url('web/viewteachersinlgas/'.$viewlgaschool->lga) }}">{{ $viewlgaschool->lga }}</a></h3>
+                                    <h3 class="card-title"><a href="{{ url('web/viewteachersinlgas1/'.$viewlgaschool->lga) }}">{{ $viewlgaschool->lga }}</a></h3>
                     
                                     <div class="card-tools">
                                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -58,7 +58,7 @@
                                   </div>
                                   <!-- /.card-header -->
                                   <div class="card-body">
-                                    <a href="{{ url('web/viewteachersinlgas/'.$viewlgaschool->lga) }}">View {{ $viewlgaschool->lga }} Teachers</a> 
+                                    <a href="{{ url('web/viewteachersinlgas1/'.$viewlgaschool->lga) }}">View {{ $viewlgaschool->lga }} Teachers</a> 
                                   </div>
                                 </div>
                               </div>

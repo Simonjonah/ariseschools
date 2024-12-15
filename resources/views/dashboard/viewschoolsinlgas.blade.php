@@ -82,9 +82,13 @@
                         @endif </a></td>
                         
                       <td><a href="{{ url('web/schoolsteachers/'.$view_school->slug) }}" target="_blank" rel="noopener noreferrer">{{ $view_school->schoolname }} Teachers</a></td>
-                      <td><a href="{{ url('web/schoolsstudents/'.$view_school->slug) }}" target="_blank" rel="noopener noreferrer">{{ $view_school->schoolname }} Student</a></td>
+                      {{-- <td><a href="{{ url('web/schoolsstudents/'.$view_school->slug) }}" target="_blank" rel="noopener noreferrer">{{ $view_school->schoolname }} Student</a></td>
                         <td><a href="{{ url('web/schoolsresults/'.$view_school->slug) }}" target="_blank" rel="noopener noreferrer">{{ $view_school->schoolname }} Results</a></td>
-                          
+                           --}}
+
+                           <td><a href="{{ url('web/schoolsstudentsclassbyboard/'.$view_school->slug) }}">{{ $view_school->schoolname }} Student</a></td>
+                           <td><a href="{{ url('web/schoolsresultsclassbyboard/'.$view_school->slug) }}">{{ $view_school->schoolname }} Results</a></td>
+                        
                         
                         
 

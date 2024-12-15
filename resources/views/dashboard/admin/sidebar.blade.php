@@ -992,7 +992,38 @@
           </li>
 
 
-         
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                VTU Section 
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('admin/vtudashboard') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View VTU</p>
+                </a>
+              </li>
+              {{-- <li class="nav-item">
+                <a href="{{ url('admin/viewapproveresultsbyad') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Approved Results</p>
+                </a>
+              </li> --}}
+
+              {{-- <li class="nav-item">
+                <a href="{{ url('admin/viewallresults') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View All Results</p>
+                </a>
+              </li> --}}
+               
+            </ul>
+          </li>
+
 
 
           <li class="nav-item has-treeview menu-open">

@@ -969,6 +969,35 @@ public function searchteachersbysusb(Request $request){
     
     }
 
+
+
+    public function reachresultbyteacherschead(Request $request){
+        // dd($request->all());
+        $request->validate([
+            // 'classname' => ['nullable', 'string'],
+            'school_id' => ['required', 'string'],
+            'academic_session' => ['required', 'string'],
+            'section' => ['required', 'string'],
+        ]);
+        // dd($request);
+        if($view_headmasters = Teacher::where('school_id', $request->school_id)
+        ->where('academic_session', $request->academic_session)
+        ->where('section', $request->section)
+        ->exists()) {
+            $view_headmasters = Teacher::orderby('created_at', 'DESC')
+            ->where('school_id', $request->school_id)
+                ->where('academic_session', $request->academic_session)
+                ->where('section', $request->section)
+            ->get(); 
+            }else{
+                return redirect()->back()->with('fail', 'There is no students in these class!');
+            }
+            return view('dashboard.yourclassteacher', compact('view_headmasters'));
+    
+    }
+
+
+
 public function logout(){
     Auth::guard('teacher')->logout();
     return redirect('teacher/login');

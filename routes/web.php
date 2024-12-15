@@ -47,7 +47,8 @@ use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\CodeController;
-
+use App\Http\Controllers\ScrachcardController;
+use App\Http\Controllers\VtuController;
 use App\Models\Academicsession;
 use App\Models\Alm;
 use App\Models\Blog;
@@ -242,6 +243,11 @@ Route::get('/contact', function () {
 Route::get('/scholarship', function () {
     return view('pages.scholarship');
 });
+
+Route::get('/vtu', function () {
+    return view('pages.vtu');
+});
+
 Route::get('/lgaschools', function () {
     $view_lgas = Lga::orderBy('lga')->get();
     return view('pages.lgaschools', compact('view_lgas'));
@@ -255,6 +261,16 @@ Route::get('/viewschoolsinlga/{lga}', function ($lga) {
 });
 
 
+Route::post('/transaction/process', [VtuController::class, 'processPayment'])->name('transaction.process');
+Route::get('/transaction/callback', [VtuController::class, 'paymentCallback'])->name('transaction.callback');
+
+Route::get('/transaction/success', function () {
+    return 'Payment successful';
+})->name('transaction.success');
+
+Route::get('/transaction/failed', function () {
+    return 'transaction failed';
+})->name('transaction.failed');
 
 
 
@@ -270,6 +286,26 @@ Route::prefix('admin')->name('admin.')->group(function() {
     });
     
     Route::middleware(['auth:admin'])->group(function() {
+        Route::get('/vtudashboard', [VtuController::class, 'vtudashboard'])->name('vtudashboard');
+        Route::get('/addwaecscrahcards', [ScrachcardController::class, 'addwaecscrahcards'])->name('addwaecscrahcards');
+        Route::get('/mtnairtime', [VtuController::class, 'mtnairtime'])->name('mtnairtime');
+        Route::post('/createmtnairtime', [VtuController::class, 'createmtnairtime'])->name('createmtnairtime');
+        Route::post('/createscrachcard', [ScrachcardController::class, 'createscrachcard'])->name('createscrachcard');
+        
+        Route::get('/addnecoscrahcards', [ScrachcardController::class, 'addnecoscrahcards'])->name('addnecoscrahcards');
+        Route::get('/viewwaecscrahcards', [ScrachcardController::class, 'viewwaecscrahcards'])->name('viewwaecscrahcards');
+        Route::get('/viewcard/{ref_no}', [ScrachcardController::class, 'viewcard'])->name('viewcard');
+        Route::get('/editcard/{ref_no}', [ScrachcardController::class, 'editcard'])->name('editcard');
+        Route::put('/updatecard/{ref_no}', [ScrachcardController::class, 'updatecard'])->name('updatecard');
+        Route::get('/deletecard/{ref_no}', [ScrachcardController::class, 'deletecard'])->name('deletecard');
+        Route::get('/usedcard/{ref_no}', [ScrachcardController::class, 'usedcard'])->name('usedcard');
+        Route::get('/usedscrahcards', [ScrachcardController::class, 'usedscrahcards'])->name('usedscrahcards');
+        Route::get('/gloairtime', [VtuController::class, 'gloairtime'])->name('gloairtime');
+        Route::get('/airtelairtime', [VtuController::class, 'airtelairtime'])->name('airtelairtime');
+        Route::get('/ninemobileairtime', [VtuController::class, 'ninemobileairtime'])->name('ninemobileairtime');
+        Route::get('/viewairtimesales', [VtuController::class, 'viewairtimesales'])->name('viewairtimesales');
+        
+        Route::get('/viewnecoscrahcards', [ScrachcardController::class, 'viewnecoscrahcards'])->name('viewnecoscrahcards');
         
         Route::get('/editschooladmin/{slug}', [SchoolsController::class, 'editschooladmin'])->name('editschooladmin');
         Route::put('/updateschooladmin/{slug}', [SchoolsController::class, 'updateschooladmin'])->name('updateschooladmin');
@@ -397,12 +433,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/addcommentadmin/{id}', [ResultController::class, 'addcommentadmin'])->name('addcommentadmin');
         Route::put('/addcommentsbyadmin/{id}', [ResultController::class, 'addcommentsbyadmin'])->name('addcommentsbyadmin');
         
-        Route::get('/studycenter1', [StudycenterController::class, 'studycenter1'])->name('studycenter1');
-        Route::post('/createstudycenter', [StudycenterController::class, 'createstudycenter'])->name('createstudycenter');
-        Route::get('/studycentertables', [StudycenterController::class, 'studycentertables'])->name('studycentertables');
-        Route::get('/studycentapproved/{id}', [StudycenterController::class, 'studycentapproved'])->name('studycentapproved');
-        Route::get('/studycentsuspend/{id}', [StudycenterController::class, 'studycentsuspend'])->name('studycentsuspend');
-        Route::get('/studycentdelete/{id}', [StudycenterController::class, 'studycentdelete'])->name('studycentdelete');
+       
         Route::post('/createam', [TeamController::class, 'createam'])->name('createam');
         Route::get('/addteam', [TeamController::class, 'addteam'])->name('addteam');
         Route::get('/viewteam', [TeamController::class, 'viewteam'])->name('viewteam');
@@ -662,6 +693,7 @@ Route::prefix('web')->name('web.')->group(function() {
         Route::post('/searchteachersbysusb', [TeacherController::class, 'searchteachersbysusb'])->name('searchteachersbysusb');
         Route::put('/updatetransfer/{ref_no}', [TeacherController::class, 'updatetransfer'])->name('updatetransfer');
         Route::get('/approvedschool/{ref_no1}', [SchoolsController::class, 'approvedschool'])->name('approvedschool');
+        Route::get('/schoolsresultsclassbyboard/{slug}', [SchoolsController::class, 'schoolsresultsclassbyboard'])->name('schoolsresultsclassbyboard');
         
         Route::get('/deletesubjectscs/{id}', [TeacherassignController::class, 'deletesubjectscs'])->name('deletesubjectscs');
         Route::get('/approvedresultsc/{id}', [ResultController::class, 'approvedresultsc'])->name('approvedresultsc');
@@ -754,7 +786,6 @@ Route::prefix('web')->name('web.')->group(function() {
         Route::get('/viewallterm', [TermController::class, 'viewallterm'])->name('viewallterm');
         Route::post('/createclassessc', [ClassnameController::class, 'createclassessc'])->name('createclassessc');
         Route::get('/addclassessc', [ClassnameController::class, 'addclassessc'])->name('addclassessc');
-        Route::get('/mysquestions', [QuestionController::class, 'mysquestions'])->name('mysquestions');
         Route::post('/createquestion', [QuestionController::class, 'createquestion'])->name('createquestion');
         Route::get('/setquestion/{id}', [QuestionController::class, 'setquestion'])->name('setquestion');
         Route::get('/viewquestion/{id}', [QuestionController::class, 'viewquestion'])->name('viewquestion');
@@ -772,14 +803,15 @@ Route::prefix('web')->name('web.')->group(function() {
         
         
         Route::post('/', [StudentdomainController::class, ''])->name('');
-
+        
         Route::put('/assignstudentclass/{ref_no}', [UserController::class, 'assignstudentclass'])->name('assignstudentclass');
         Route::get('payment', [SchoolfeeController::class, 'payment'])->name('payment');
         Route::get('/editstudentsc/{ref_no}', [StudentController::class, 'editstudentsc'])->name('editstudentsc');
+        Route::post('/reachresultbyteacherschead', [TeacherController::class, 'reachresultbyteacherschead'])->name('reachresultbyteacherschead');
         Route::post('/reachresultbystudentschead', [StudentController::class, 'reachresultbystudentschead'])->name('reachresultbystudentschead');
         Route::get('/viewyourstudentsinschhol/{classname}', [ClassnameController::class, 'viewyourstudentsinschhol'])->name('viewyourstudentsinschhol');
         Route::get('/viewteacherbylga', [LgaController::class, 'viewteacherbylga'])->name('viewteacherbylga');
-        Route::get('/viewteachersinlgas/{lga}', [LgaController::class, 'viewteachersinlgas'])->name('viewteachersinlgas');
+        Route::get('/viewteachersinlgas1/{lga}', [LgaController::class, 'viewteachersinlgas1'])->name('viewteachersinlgas1');
         Route::get('/schoolsteachers/{slug}', [SchoolsController::class, 'schoolsteachers'])->name('schoolsteachers');
         Route::get('/editcenternumber/{ref_no1}', [SchoolsController::class, 'editcenternumber'])->name('editcenternumber');
         Route::put('/updatecenternumber/{ref_no1}', [SchoolsController::class, 'updatecenternumber'])->name('updatecenternumber');
@@ -787,15 +819,16 @@ Route::prefix('web')->name('web.')->group(function() {
         
         Route::get('/viewyourschoolsbylgas', [LgaController::class, 'viewyourschoolsbylgas'])->name('viewyourschoolsbylgas');
         Route::get('/viewschoolsinlgas/{lga}', [LgaController::class, 'viewschoolsinlgas'])->name('viewschoolsinlgas');
-        Route::get('/schoolsstudents/{slug}', [SchoolsController::class, 'schoolsstudents'])->name('schoolsstudents');
+        Route::get('/schoolsstudents/{classname}/{slug}', [ClassnameController::class, 'schoolsstudents'])->name('schoolsstudents');
         Route::get('/schoolsprinteachers/{slug}', [SchoolsController::class, 'schoolsprinteachers'])->name('schoolsprinteachers');
         Route::get('/viewschool/{ref_no1}', [SchoolsController::class, 'viewschool'])->name('viewschool');
         Route::get('/editschool/{ref_no1}', [SchoolsController::class, 'editschool'])->name('editschool');
         Route::put('/updateschool/{ref_no1}', [SchoolsController::class, 'updateschool'])->name('updateschool');
         Route::get('/schoolelete/{ref_no1}', [SchoolsController::class, 'schoolelete'])->name('schoolelete');
-        Route::get('/schoolsresults/{slug}', [ResultController::class, 'schoolsresults'])->name('schoolsresults');
+        Route::get('/schoolsresults/{classname}/{slug}', [ClassnameController::class, 'schoolsresults'])->name('schoolsresults');
         Route::get('/allresultsbylga', [LgaController::class, 'allresultsbylga'])->name('allresultsbylga');
         Route::get('/addpsychomotors', [DomainController::class, 'addpsychomotors'])->name('addpsychomotors');
+        Route::get('/schoolsstudentsclassbyboard/{slug}', [SchoolsController::class, 'schoolsstudentsclassbyboard'])->name('schoolsstudentsclassbyboard');
         
         // Route::get('/generate-report', 'ReportController@generateReport');
         Route::post('generatePDF', [ResultController::class, 'generatePDF'])->name('generatePDF');

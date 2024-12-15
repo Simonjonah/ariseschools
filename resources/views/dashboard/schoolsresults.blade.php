@@ -57,7 +57,7 @@
                     <th>Psycomotor</th>
                     <th>CA 1</th>
                     <th>CA 2</th>
-                    <th>CA 3</th>
+                    {{-- <th>CA 3</th> --}}
                     <th>Exams</th>
                     <th>Total</th>
                     <th>Grade</th>
@@ -103,9 +103,9 @@
                           @else
                           
                         @endif
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
-                            Seach Results
-                          </button>
+                        {{-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                            Seach Results of Class
+                          </button> --}}
                     </td>
                         <td><a href="{{ url('web/addpsychomotor/'.$view_resultall->id) }}"
                           class='btn btn-default'>
@@ -117,7 +117,7 @@
                       {{-- <td>{{ $view_resultall->user['ref_no'] }}</td> --}}
                       <td>{{ $view_resultall->test_1 }}</td>
                       <td>{{ $view_resultall->test_2 }}</td>
-                      <td>{{ $view_resultall->test_3 }}</td>
+                      {{-- <td>{{ $view_resultall->test_3 }}</td> --}}
                       <td>{{ $view_resultall->exams }}</td>
                       <td>{{ $view_resultall->test_1 + $view_resultall->test_2 + $view_resultall->test_3 + $view_resultall->exams }}</td>
                       <td>@if ($view_resultall->test_1 + $view_resultall->test_2 + $view_resultall->test_3 + $view_resultall->exams > 79)
@@ -175,7 +175,7 @@
                       {{-- <th>Ref. No</th> --}}
                       <th>CA 1</th>
                       <th>CA 2</th>
-                      <th>CA 3</th>
+                      {{-- <th>CA 3</th> --}}
                       <th>Exams</th>
                       <th>Total</th>
                       {{-- <th></th> --}}
@@ -218,26 +218,26 @@
 <!-- ./wrapper -->
 
 
-<script src="../../assets/plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 
-<script src="../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-<script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../../assets/plugins/jszip/jszip.min.js"></script>
-<script src="../../assets/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../../assets/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../../assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
-<script src="../../assets/dist/js/adminlte.min.js?v=3.2.0"></script>
+<script src="{{ asset('assets/dist/js/adminlte.min.js?v=3.2.0') }}"></script>
 
-<script src="../../assets/dist/js/demo.js"></script>
+<script src="{{ asset('assets/dist/js/demo.js') }}"></script>
 
 <script>
   $(function () {
@@ -273,11 +273,11 @@
           <form action="{{ url('web/reachresultbysc') }}" method="post">
             @csrf
             <div class="form-group">
-                <select name="schoolname" class="form-control" id="">
+                <select name="school_id" class="form-control" id="">
                   @if (Auth::guard('web')->user()->schooltype == 'SUBEB')
                   @foreach ($view_resultalls as $view_resultall)
                     @if ($view_resultall->section == 'Primary')
-                    <option value="{{ $view_resultall->schoolname }}">{{ $view_resultall->schoolname }}</option>
+                    <option value="{{ $view_resultall->school_id }}">{{ $view_resultall->school['schoolname'] }}</option>
                     @else
                     @endif
                     @endforeach
@@ -358,7 +358,7 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
               <select name="classname" class="form-control" id="">
               @if (Auth::user()->schooltype == 'SUBEB')
                 @foreach ($view_classes as $view_classe)
@@ -381,7 +381,7 @@
              
 
               </select>
-          </div>
+          </div> --}}
 
             <div class="form-group">
                 <select name="academic_session" class="form-control" id="">

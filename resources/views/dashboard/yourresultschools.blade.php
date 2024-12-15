@@ -56,8 +56,8 @@
                <div class="col-sm-8 invoice-col">
                    <h2 style=" text-align: center; text-transform: uppercase">{{ $view_myresult_result->schoolname }}</h2>
                    <address style="text-align: center">
-                   {{$view_myresult_result->address}} <br>
-                   {{$view_myresult_result->motor}}
+                   {{$view_myresult_result->school['address'] }} <br>
+                   {{$view_myresult_result->school['motor']}}
                   </address>
                 </div>
                 <!-- /.col -->
@@ -112,14 +112,11 @@
                   <table class="table table-striped">
                       <thead>
                       <tr>
-                        {{-- <th>S/N</th> --}}
-                        <th>Firstname</th>
-                        <th>Middlename</th>
-                        <th>Surname</th>
+                        
                         <th>Subjects</th>
                         <th>Ca 1</th>
                         <th>Ca 2</th>
-                        <th>Ca 3</th>
+                        
                         <th>Exams</th>
                         <th>Total</th>
                         <th>Grade</th>
@@ -138,13 +135,11 @@
                           // $totalsubject_score +=$view_myresult_result->test_1  + $view_myresult_result->test_2  + $view_myresult_result->test_3  + $view_myresult_result->exams                            
                           @endphp
                           <tr>
-                              <td>{{ $view_myresult_result->user['fname'] }}</td>
-                              <td>{{ $view_myresult_result->user['middlename'] }}</td>
-                              <td>{{ $view_myresult_result->user['surname'] }}</td>
+                             
                               <td>{{ $view_myresult_result->subjectname }}</td>
                               <td>{{ $view_myresult_result->test_1 }}</td>
                               <td>{{ $view_myresult_result->test_2 }}</td>
-                              <td>{{ $view_myresult_result->test_3 }}</td>
+                              {{-- <td>{{ $view_myresult_result->test_3 }}</td> --}}
                               <td>{{ $view_myresult_result->exams }}</td>
                               <td>{{ $view_myresult_result->test_1  + $view_myresult_result->test_2  + $view_myresult_result->test_3  + $view_myresult_result->exams }}</td>
                               <td>@if ($view_myresult_result->test_1 + $view_myresult_result->test_2 + $view_myresult_result->test_3 + $view_myresult_result->exams > 69)
@@ -296,6 +291,10 @@
                   <div class="form-group">
                       <textarea class="form-control" name="teacher_comment" id="" cols="20" rows="5" placeholder="Teacher's Comment">{{ $view_myresult_result->teacher_comment }}</textarea>
                   </div>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="textterm"  placeholder="Teacher's Comment">{{ $view_myresult_result->text_term }}</textarea>
+                </div>
             </div>
           </div>
           <!-- /.col -->

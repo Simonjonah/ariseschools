@@ -106,16 +106,17 @@ class LgaController extends Controller
         ->where('schooltype', 'SSEB')->count();
         return view('dashboard.admin.viewsinglelgasschool', compact('viewlga', 'countsecondaryschools', 'countprimayschools', 'viewlgasecondaries', 'viewlgas'));
     }
-    public function viewteachersinlgas($lga){
+    public function viewteachersinlgas1($lga){
         $viewlgas = Lga::where('lga', $lga)->first();
 
         $view_headmasters = Teacher::where('lga', $lga)
         ->where('assign1', 'teacher')
         ->where('user_id', auth::guard('web')->id())->latest()->get();
         $view_schools = School::all();
-        $view_classes = Classname::all();
-        $view_lgas = Lga::all();
-        return view('dashboard.viewteachersinlgas', compact('view_lgas', 'view_classes', 'view_schools', 'view_headmasters'));
+        // $view_classes = Classname::all();
+        // $view_lgas = Lga::all();
+        $view_sessions = Academicsession::latest()->get();
+        return view('dashboard.viewteachersinlgas1', compact('view_sessions', 'view_schools', 'view_headmasters'));
     }
 
     public function viewschoolsinlgas($lga){

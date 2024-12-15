@@ -341,5 +341,24 @@ class ClassnameController extends Controller
         return view('dashboard.admin.viewallstudentsadmin', compact('view_byadminclasses', 'view_academcsessions', 'view_classes', 'viewstudents'));
     }
     
+
+    public function schoolsresults($classname, $slug){
+        $view_classes = Classname::where('classname', $classname)->first();
+        $view_resultalls = Result::where('classname', $classname)->where('slug', $slug)->where('user_id', auth::guard('web')->id())->get();
+        return view('dashboard.schoolsresults', compact('view_classes', 'view_resultalls'));
+    }
+
+
+    public function schoolsstudents($classname, $slug){
+        $view_classes = Classname::where('classname', $classname)->first();
+        $view_sessions = Academicsession::latest()->get();
+        $viewschool_students = Student::where('classname', $classname)->where('slug', $slug)->where('user_id', auth::guard('web')->id())->get();
+        return view('dashboard.schoolsstudents', compact('view_sessions', 'view_classes', 'viewschool_students'));
+    }
+
+
+
     
-}
+    
+} 
+
