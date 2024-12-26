@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\QueryController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\DatasubscriptionController;
 use App\Http\Controllers\SchoolsController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AlmController;
@@ -304,6 +305,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/airtelairtime', [VtuController::class, 'airtelairtime'])->name('airtelairtime');
         Route::get('/ninemobileairtime', [VtuController::class, 'ninemobileairtime'])->name('ninemobileairtime');
         Route::get('/viewairtimesales', [VtuController::class, 'viewairtimesales'])->name('viewairtimesales');
+        Route::get('/mtndata', [DatasubscriptionController::class, 'mtndata'])->name('mtndata');
+        Route::post('/createdata', [DatasubscriptionController::class, 'createdata'])->name('createdata');
         
         Route::get('/viewnecoscrahcards', [ScrachcardController::class, 'viewnecoscrahcards'])->name('viewnecoscrahcards');
         

@@ -148,6 +148,56 @@
               </li>
             </ul>
           </li>
+
+
+
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="ion ion-wifi text-warning"></i>
+              <p>
+                Data Subscription
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('admin/mtndata') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buy Mtn Data</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/airteldata') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buy Airtel Data</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/glodata') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buy Glo Data</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/ninemobiledata') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buy 9mobile Data</p>
+                </a>
+              </li>
+             
+             
+              
+              <li class="nav-item">
+                <a href="{{ url('admin/viewdatasales') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Data Sales</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>

@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('lga', 70)->nullable();
             $table->string('alms', 20)->nullable();
             $table->string('ref_no', 20)->nullable();
-            $table->string('surname', 50)->nullable();
+            // $table->string('surname', 50)->nullable();
             $table->string('surname', 50)->nullable();
             $table->string('middlename', 50)->nullable();
             $table->string('fname', 50)->nullable();

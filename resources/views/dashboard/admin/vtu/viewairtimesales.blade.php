@@ -60,9 +60,8 @@
                 @endif
                     @foreach ($viewairtimes as $viewairtime)
                   <tr>
-
                     <td>{{ $viewairtime->pin }}</td>
-                    <td>{{ $viewairtime->serial_number }}</td>
+                    <td>{{ $viewairtime->serviceID }}</td>
                     <td>{{ $viewairtime->amount }}</td>
                     <td>{{ $viewairtime->type }}</td>
                     <td><a href="{{ url('admin/usedcard/'.$viewairtime->ref_no) }}" class="btn btn-warning">Used</a></td>

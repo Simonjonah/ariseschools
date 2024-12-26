@@ -59,10 +59,7 @@ class VtuController extends Controller
     
 
     public function createmtnairtime(Request $request){
-        // $formattedDate = Carbon::now('Africa/Lagos')->format('Ymdhi');
-        // $formattedDate = date_default_timezone_set('Africa/Lagos');
-        // $request_id = $formattedDate . date('Ymdhi', time());
-    //    dd($request_id);
+       
     date_default_timezone_set('Africa/Lagos');
     $currentTime = Carbon::now()->format('YmdHi'); // e.g., 202412141630
     $randomString = bin2hex(random_bytes(5)); // Generates a random string
@@ -85,6 +82,7 @@ class VtuController extends Controller
             
 
             $responseData = json_decode($response->getBody()->getContents(), true);
+    // dd($responseData);
            
             if ($responseData['code'] === '000') {
                 $transaction = $responseData['content']['transactions'];
@@ -168,54 +166,7 @@ class VtuController extends Controller
     }
 
 
-
-    // public function callback(Request $request){
-    //     $request_id = $request->query('request_id');
-    //    //  dd($reference);
-    //     if (!$request_id) {
-    //         return back()->with('error', 'No payment reference provided.');
-    //     }
-       
-    //     // Verify the payment using Paystack API
-    //     try {
-    //         $response = Http::withToken("sk_live_25adf80a8fac8e8a139ada7ad5b2bb6cf8af80fa")
-    //             ->get('https://api.paystack.co/transaction/verify/' . $reference);
-
-    //         $transaction = $response->json();
-    //         $reference = $request->query('reference');
-            
-    //         if ($transaction['status'] && $transaction['data']['status'] == 'success') {
-                
-    //            $transaction = Transaction::where('reference', $reference)->first();
-    //            $user = User::where('reference', $reference)->first();
-    //            $subscription = Subscription::where('reference', $reference)->first();
-    //            $transaction->update([
-    //                'status' => 'success',
-    //                'user_id' =>$user->id,
-    //            ]);
-    //            $user->update([
-    //                'status' => 'success',
-                   
-    //            ]);
-
-    //            $subscription->update([
-    //                'status' => 'success',
-    //                'user_id' =>$user->id,
-    //            ]);
-              
-    //             return redirect()->route('login')->with('success', 'Payment successful!');
-    //         } else {
-    //             return redirect()->route('payment.failed')->with('error', 'Payment failed. Please try again.');
-    //         }
-    //     } catch (RequestException $e) {
-            
-    //         return redirect()->route('payment.failed')->with('error', 'An error occurred. Please try again.');
-    //     }
-
-    //     throw $e; // or handle the error as needed
-
-    // }
-
+    
 
     
 }
