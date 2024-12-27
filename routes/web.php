@@ -19,6 +19,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CableController;
 use App\Http\Controllers\ClassactivityController;
 use App\Http\Controllers\ClassnameController;
 use App\Http\Controllers\CompetitionController;
@@ -306,6 +307,12 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/ninemobileairtime', [VtuController::class, 'ninemobileairtime'])->name('ninemobileairtime');
         Route::get('/viewairtimesales', [VtuController::class, 'viewairtimesales'])->name('viewairtimesales');
         Route::get('/mtndata', [DatasubscriptionController::class, 'mtndata'])->name('mtndata');
+        Route::get('/airteldata', [DatasubscriptionController::class, 'airteldata'])->name('airteldata');
+        Route::get('/glodata', [DatasubscriptionController::class, 'glodata'])->name('glodata');
+        Route::get('/viewdatasales', [DatasubscriptionController::class, 'viewdatasales'])->name('viewdatasales');
+        Route::get('/ninemobiledata', [DatasubscriptionController::class, 'ninemobiledata'])->name('ninemobiledata');
+        Route::get('/dstvsub', [CableController::class, 'dstvsub'])->name('dstvsub');
+        Route::post('/verifydstv', [CableController::class, 'verifydstv'])->name('verifydstv');
         Route::post('/createdata', [DatasubscriptionController::class, 'createdata'])->name('createdata');
         
         Route::get('/viewnecoscrahcards', [ScrachcardController::class, 'viewnecoscrahcards'])->name('viewnecoscrahcards');

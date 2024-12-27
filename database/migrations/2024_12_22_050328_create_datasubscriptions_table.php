@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('product_name')->nullable();
             $table->string('unique_element')->nullable();
             $table->string('unit_price')->nullable();
-            $table->string('quantuty')->nullable();
+            $table->string('quantity')->nullable();
             $table->string('service_verification')->nullable();
             $table->string('channel')->nullable();
             $table->string('commission')->nullable();

@@ -70,7 +70,8 @@ return [
     */
 
     // 'timezone' => 'GMT',
-    'timezone' => 'Europe/Berlin',
+    // 'timezone' => 'Europe/Berlin',
+    'timezone' => 'UTC',
 
     /*
     |--------------------------------------------------------------------------
