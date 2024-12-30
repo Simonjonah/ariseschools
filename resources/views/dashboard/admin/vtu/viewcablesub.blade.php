@@ -33,18 +33,18 @@
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
-                  <tr>
-                    <th>Serial Number</th>
-                    <th>Pin</th>
-                    <th>Amount</th>
-                    <th>Type</th>
-                    <th>Use</th>
-                    <th>Status</th>
-                    <th>View</th>
-                    <th>Edit</th>
-                    <th>Date</th>
-                    <th>Delete</th>
-                  </tr>
+                    <tr>
+                        <th>Serial Number</th>
+                        <th>Pin</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                       
+                        <th>Status</th>
+                        <th>View</th>
+                        <th>Date</th>
+                        <th>Delete</th>
+                      </tr>
+                 
                   </thead>
                   <tbody>
                     @if (Session::get('success'))
@@ -64,8 +64,7 @@
                     <td>{{ $view_cable->serviceID }}</td>
                     <td>{{ $view_cable->unit_price }}</td>
                     <td>{{ $view_cable->type }}</td>
-                    <td><a href="{{ url('admin/usedcard/'.$view_cable->ref_no) }}" class="btn btn-warning">Used</a></td>
-
+                   
                     <td>@if ($view_cable->status == null)
                         <span class="badge badge-primary"> Nothing</span>
                        @elseif($view_cable->status == 'pending')
@@ -76,9 +75,8 @@
                        <span class="badge badge-danger"> Cancelled</span>
                       
                        @endif</td>
-                    <td><a href="{{ url('admin/viewcard/'.$view_cable->ref_no) }}" class="btn btn-info">View</a></td>
-                    <td><a href="{{ url('admin/editcard/'.$view_cable->ref_no) }}" class="btn btn-primary">Edit</a></td>
-                    <td><a href="{{ url('admin/deletecard/'.$view_cable->ref_no) }}" class="btn btn-danger">Delete</a></td>
+                    <td><a href="{{ url('admin/viewcable/'.$view_cable->ref_no) }}" class="btn btn-info">View</a></td>
+                    <td><a href="{{ url('admin/deletecables/'.$view_cable->ref_no) }}" class="btn btn-danger">Delete</a></td>
                     <td>{{ $view_cable->created_at->format('d M, Y') }}</td>
                      
                   </tr>
@@ -91,11 +89,9 @@
                     <th>Pin</th>
                     <th>Amount</th>
                     <th>Type</th>
-                    <th>Use</th>
-
+                   
                     <th>Status</th>
                     <th>View</th>
-                    <th>Edit</th>
                     <th>Date</th>
                     <th>Delete</th>
                   </tr>

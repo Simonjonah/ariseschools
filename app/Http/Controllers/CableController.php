@@ -346,6 +346,20 @@ class CableController extends Controller
     public function viewcablesub(){
             $view_cables = Cable::whereNotNull('status')->latest()->get();
         return view('dashboard.admin.vtu.viewcablesub', compact('view_cables'));
-
     }
+
+
+    public function viewcable($ref_no){
+        $view_cables = Cable::where('ref_no', $ref_no)->first();
+    return view('dashboard.admin.vtu.viewcable', compact('view_cables'));
+    }
+
+
+
+    public function deletecables($ref_no){
+        $view_cables = Cable::where('ref_no', $ref_no)->delete();
+    return redirect()->back()->with('success', 'You have deleted the subscription successfully');
+    }
+
+    
 }

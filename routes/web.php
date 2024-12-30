@@ -327,6 +327,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/cablesubstartimes', [CableController::class, 'cablesubstartimes'])->name('cablesubstartimes');
         Route::get('/showmaxtv', [CableController::class, 'showmaxtv'])->name('showmaxtv');
         Route::get('/viewcablesub', [CableController::class, 'viewcablesub'])->name('viewcablesub');
+        Route::get('/viewcable/{ref_no}', [CableController::class, 'viewcable'])->name('viewcable');
+        Route::get('/deletecables/{ref_no}', [CableController::class, 'deletecables'])->name('deletecables');
         
         Route::get('/editschooladmin/{slug}', [SchoolsController::class, 'editschooladmin'])->name('editschooladmin');
         Route::put('/updateschooladmin/{slug}', [SchoolsController::class, 'updateschooladmin'])->name('updateschooladmin');
