@@ -316,6 +316,17 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::post('/createdata', [DatasubscriptionController::class, 'createdata'])->name('createdata');
         
         Route::get('/viewnecoscrahcards', [ScrachcardController::class, 'viewnecoscrahcards'])->name('viewnecoscrahcards');
+        Route::get('/cablesub/{ref_no}', [CableController::class, 'cablesub'])->name('cablesub');
+        Route::post('/createcablesubsub', [CableController::class, 'createcablesubsub'])->name('createcablesubsub');
+        Route::get('/gotv', [CableController::class, 'gotv'])->name('gotv');
+        Route::post('/verifygotv', [CableController::class, 'verifygotv'])->name('verifygotv');
+        Route::get('/cablesubgotv/{ref_no}', [CableController::class, 'cablesubgotv'])->name('cablesubgotv');
+        Route::get('/startimesubtv', [CableController::class, 'startimesubtv'])->name('startimesubtv');
+        Route::post('/verifystartime', [CableController::class, 'verifystartime'])->name('verifystartime');
+        Route::get('/cablesubstatimes/{ref_no}', [CableController::class, 'cablesubstatimes'])->name('cablesubstatimes');
+        Route::get('/cablesubstartimes', [CableController::class, 'cablesubstartimes'])->name('cablesubstartimes');
+        Route::get('/showmaxtv', [CableController::class, 'showmaxtv'])->name('showmaxtv');
+        Route::get('/viewcablesub', [CableController::class, 'viewcablesub'])->name('viewcablesub');
         
         Route::get('/editschooladmin/{slug}', [SchoolsController::class, 'editschooladmin'])->name('editschooladmin');
         Route::put('/updateschooladmin/{slug}', [SchoolsController::class, 'updateschooladmin'])->name('updateschooladmin');
@@ -398,7 +409,6 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('viewresultbylga', [LgaController::class, 'viewresultbylga'])->name('viewresultbylga');
         Route::get('viewlgaresultsbyadmins/{lga}', [LgaController::class, 'viewlgaresultsbyadmins'])->name('viewlgaresultsbyadmins');
         Route::get('allteachers', [TeacherController::class, 'allteachers'])->name('allteachers');
-        Route::get('queriedteachers', [QueryController::class, 'queriedteachers'])->name('queriedteachers');
         Route::get('sackedteachers', [TeacherController::class, 'sackedteachers'])->name('sackedteachers');
         Route::get('suspendedteachers', [TeacherController::class, 'suspendedteachers'])->name('suspendedteachers');
         Route::get('nurserysubjects', [SubjectController::class, 'nurserysubjects'])->name('nurserysubjects');
@@ -478,19 +488,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/blogeapproved/{ref_no}', [BlogController::class, 'blogeapproved'])->name('blogeapproved');
         Route::get('/blogesuspend/{ref_no}', [BlogController::class, 'blogesuspend'])->name('blogesuspend');
         Route::get('/blogedelete/{ref_no}', [BlogController::class, 'blogedelete'])->name('blogedelete');
-        Route::get('/addgallery', [GalleryController::class, 'addgallery'])->name('addgallery');
-        Route::post('/createtgallery', [GalleryController::class, 'createtgallery'])->name('createtgallery');
-        Route::get('/viewgallery', [GalleryController::class, 'viewgallery'])->name('viewgallery');
-        Route::get('/galleryedit/{id}', [GalleryController::class, 'galleryedit'])->name('galleryedit');
-        Route::put('/updategallery/{id}', [GalleryController::class, 'updategallery'])->name('updategallery');
-        Route::get('/gallerydelete/{id}', [GalleryController::class, 'gallerydelete'])->name('gallerydelete');
-        
-        Route::get('/addfacility', [FacilityController::class, 'addfacility'])->name('addfacility');
-        Route::post('/createfacility', [FacilityController::class, 'createfacility'])->name('createfacility');
-        Route::get('/viewfacility', [FacilityController::class, 'viewfacility'])->name('viewfacility');
-        Route::get('/facilityedit/{id}', [FacilityController::class, 'facilityedit'])->name('facilityedit');
-        Route::put('/updatefacility/{id}', [FacilityController::class, 'updatefacility'])->name('updatefacility');
-        Route::get('/facilitydelete/{id}', [FacilityController::class, 'facilitydelete'])->name('facilitydelete');
+       
         Route::get('/schoolpdf/{ref_no1}', [SchoolsController::class, 'schoolpdf'])->name('schoolpdf');
         Route::get('/rejectschool/{ref_no1}', [SchoolsController::class, 'rejectschool'])->name('rejectschool');
         Route::get('/suspendschool/{ref_no1}', [SchoolsController::class, 'suspendschool'])->name('suspendschool');
@@ -499,13 +497,6 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/viewschrejected', [SchoolsController::class, 'viewschrejected'])->name('viewschrejected');
         
 
-        Route::get('/viewmainslider', [MainsliderController::class, 'viewmainslider'])->name('viewmainslider');
-        Route::get('/addmainslider', [MainsliderController::class, 'addmainslider'])->name('addmainslider');
-        Route::post('/createteslider', [MainsliderController::class, 'createteslider'])->name('createteslider');
-        Route::get('/slideredit/{id}', [MainsliderController::class, 'slideredit'])->name('slideredit');
-        Route::put('/updateslider/{id}', [MainsliderController::class, 'updateslider'])->name('updateslider');
-        Route::get('/slideredelete/{id}', [MainsliderController::class, 'slideredelete'])->name('slideredelete');
-        
         Route::get('/viewschreview', [SchoolsController::class, 'viewschreview'])->name('viewschreview');
         Route::get('/viewstudent/{ref_no}', [StudentController::class, 'viewstudent'])->name('viewstudent');
         Route::get('/editstudent/{ref_no}', [StudentController::class, 'editstudent'])->name('editstudent');
@@ -556,15 +547,6 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/viewabujanursery', [StudentController::class, 'viewabujanursery'])->name('viewabujanursery');
         Route::get('/viewabujaprimary', [StudentController::class, 'viewabujaprimary'])->name('viewabujaprimary');
         Route::get('/viewabjhighschool', [StudentController::class, 'viewabjhighschool'])->name('viewabjhighschool');
-        Route::post('/createparent', [StudentParentController::class, 'createparent'])->name('createparent');
-        Route::get('/viewparents', [StudentParentController::class, 'viewparents'])->name('viewparents');
-        Route::get('/viewparent/{ref_no}', [StudentParentController::class, 'viewparent'])->name('viewparent');
-        Route::get('/editparent/{ref_no}', [StudentParentController::class, 'editparent'])->name('editparent');
-        Route::put('/updateparent/{ref_no}', [StudentParentController::class, 'updateparent'])->name('updateparent');
-        Route::get('/addchild/{id}', [StudentParentController::class, 'addchild'])->name('addchild');
-        Route::post('/add_childto_parents', [UserController::class, 'add_childto_parents'])->name('add_childto_parents');
-        Route::get('/parentochild/{id}', [StudentParentController::class, 'parentochild'])->name('parentochild');
-        Route::get('/pad', [StudentParentController::class, 'pad'])->name('pad');
         Route::get('/viewresults', [ResultController::class, 'viewresults'])->name('viewresults');
         Route::get('/viewresult/{id}', [ResultController::class, 'viewresult'])->name('viewresult');
         Route::get('/subdelte/{id}', [SubjectController::class, 'subdelte'])->name('subdelte');
@@ -596,17 +578,6 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/allsubjects', [SubjectController::class, 'allsubjects'])->name('allsubjects');
         Route::get('/setsubjectquestions', [SubjectController::class, 'setsubjectquestions'])->name('setsubjectquestions');
         Route::get('/addquestions/{id}', [SubjectController::class, 'addquestions'])->name('addquestions');
-        Route::post('/addquestions', [QuestionController::class, 'addquestions'])->name('addquestions');
-        Route::post('/addbyadminquestion', [QuestionController::class, 'addbyadminquestion'])->name('addbyadminquestion');
-        Route::get('/questionbyadmin', [QuestionController::class, 'questionbyadmin'])->name('questionbyadmin');
-        Route::get('/viewsinglequestionz/{id}', [QuestionController::class, 'viewsinglequestionz'])->name('viewsinglequestionz');
-        Route::get('/editquestionzadmin/{id}', [QuestionController::class, 'editquestionzadmin'])->name('editquestionzadmin');
-        Route::get('/questionzapprove/{id}', [QuestionController::class, 'questionzapprove'])->name('questionzapprove');
-        Route::get('/questionzsunapprove/{id}', [QuestionController::class, 'questionzsunapprove'])->name('questionzsunapprove');
-        Route::put('/updateadminquestion/{id}', [QuestionController::class, 'updateadminquestion'])->name('updateadminquestion');
-        Route::get('/uyoquestions', [QuestionController::class, 'uyoquestions'])->name('uyoquestions');
-        Route::get('/abujaquestions', [QuestionController::class, 'abujaquestions'])->name('abujaquestions');
-        Route::get('/teachersquestion/{user_id}', [QuestionController::class, 'teachersquestion'])->name('teachersquestion');
         Route::get('/viewprincipalsbylgadmin', [LgaController::class, 'viewprincipalsbylgadmin'])->name('viewprincipalsbylgadmin');
         Route::get('/viewlgaprincipals/{lga}', [LgaController::class, 'viewlgaprincipals'])->name('viewlgaprincipals');
         Route::get('/subebheadmaster/{lga}', [LgaController::class, 'subebheadmaster'])->name('subebheadmaster');
@@ -626,7 +597,6 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/princisaddmit/{ref_no}', [TeacherController::class, 'princisaddmit'])->name('princisaddmit');
         Route::get('/viewheadmaster', [TeacherController::class, 'viewheadmaster'])->name('viewheadmaster');
         
-        Route::get('/viewnetworkcourses', [RegistercourseController::class, 'viewnetworkcourses'])->name('viewnetworkcourses');
         Route::get('/print1stinglepaymentspdf/{id}', [StudentController::class, 'print1stinglepaymentspdf'])->name('print1stinglepaymentspdf');
         Route::get('/viewallpaymentfirst', [StudentController::class, 'viewallpaymentfirst'])->name('viewallpaymentfirst');
         Route::get('/print1stinglepaymentspdfgf', [StudentController::class, 'print1stinglepaymentspdfgf'])->name('print1stinglepaymentspdfgf');

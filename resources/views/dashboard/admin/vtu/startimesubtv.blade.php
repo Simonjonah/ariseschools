@@ -14,12 +14,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">DSTV</h1>
+            <h1 class="m-0 text-dark">STARTIMES</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">DSTV </li>
+              <li class="breadcrumb-item active">STARTIMES </li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -36,7 +36,7 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Add DSTV</h3>
+              <h3 class="card-title">Add STARTIMES</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -44,7 +44,7 @@
               <div class="row">
                 <div class="col-lg-6">
                   
-                  <form action="{{ url('admin/verifydstv') }}" method="post" enctype="multipart/form-data">
+                  <form action="{{ url('admin/verifystartime') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @if (Session::get('success'))
                         <div class="alert alert-success">
@@ -71,43 +71,18 @@
 
 
 
-                {{-- @php
-                use Carbon\Carbon;
-                date_default_timezone_set('Africa/Lagos');
-                        $currentTime = Carbon::now('Africa/Lagos')->format('Ymdhi'); 
-                        $randomString = bin2hex(random_bytes(5)); 
-                        $man =  $currentTime . $randomString;
-                        // dd($man);
-                @endphp
-                  <label>Select your Plan</label>
-                  <select name="variation_code" class="form-control">
-                    @foreach ($variations as $variation)
-                    <option value="{{ $variation['variation_code'] }}">
-                          {{ $variation['variation_code'] }}
-                      </option>
-                  @endforeach
-                  </select> --}}
-
-
-                  
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">serviceID DSTV</label>
+                  <label for="exampleInputEmail1">serviceID STARTIMES</label>
                   <input type="hidden" name="serviceID" class="form-control" @error('service ID') 
-                  @enderror value="dstv" id="exampleInputEmail1" placeholder="serviceID"> 
+                  @enderror value="startimes" id="exampleInputEmail1" placeholder="serviceID"> 
                 </div>
                 @error('serviceID')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
 
 
-                {{-- <div class="form-group">
-                  <input type="hidden" name="request_id" class="form-control" @error('service ID') 
-                  @enderror value="{{ $man }}" id="exampleInputEmail1" placeholder="request_id"> 
-                </div>
-                @error('request_id')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror --}}
+             
 
                
                   </div>

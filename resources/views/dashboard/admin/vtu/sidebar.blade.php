@@ -237,6 +237,21 @@
                   <p>GOTV</p>
                 </a>
               </li>
+
+
+              <li class="nav-item">
+                <a href="{{ url('admin/startimesubtv') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Star Time TV</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ url('admin/showmaxtv') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Showmax TV</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="{{ url('admin/viewcablesub') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

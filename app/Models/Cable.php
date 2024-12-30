@@ -23,7 +23,7 @@ class Cable extends Model
         'unit_price',
         'quantity',
         'billersCode',
-        
+        'subscription_type',
         'service_verification',
         'channel',
         'commission',

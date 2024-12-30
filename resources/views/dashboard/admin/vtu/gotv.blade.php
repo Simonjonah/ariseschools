@@ -44,7 +44,7 @@
               <div class="row">
                 <div class="col-lg-6">
                   
-                  <form action="{{ url('admin/verifydstv') }}" method="post" enctype="multipart/form-data">
+                  <form action="{{ url('admin/verifygotv') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @if (Session::get('success'))
                         <div class="alert alert-success">
@@ -92,9 +92,9 @@
                   
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">serviceID DSTV</label>
+                  <label for="exampleInputEmail1">serviceID GOTV</label>
                   <input type="hidden" name="serviceID" class="form-control" @error('service ID') 
-                  @enderror value="dstv" id="exampleInputEmail1" placeholder="serviceID"> 
+                  @enderror value="gotv" id="exampleInputEmail1" placeholder="serviceID"> 
                 </div>
                 @error('serviceID')
                 <span class="text-danger">{{ $message }}</span>
