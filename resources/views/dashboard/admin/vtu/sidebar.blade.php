@@ -262,6 +262,111 @@
           </li>
 
 
+
+
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                  Electricity Bill
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('admin/ikedcpay') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>IKEDC - IKEJA</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/ekedcpay') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>EKEDC - EKO</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{ url('admin/kedcopay') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>KEDCO</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ url('admin/phedpay') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PHED</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/jecpay') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>JED - JOS</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{ url('admin/jecpay') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>JED - JOS</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{ url('admin/ibedcPAY') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>IBEDC - Ibadan</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{ url('admin/kaedcopay') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>KAEDCO – Kaduna</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ url('admin/eedcpay') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>EEDC – Enugu </p>
+                </a>
+              </li>
+
+
+
+              <li class="nav-item">
+                <a href="{{ url('admin/bedc') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BEDC – Benin</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{ url('admin/abapay') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ABA – ABA </p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{ url('admin/yedc') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>YEDC – YOLA </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
             
 
 

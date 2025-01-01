@@ -49,6 +49,7 @@ use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\CodeController;
+use App\Http\Controllers\ElectricityController;
 use App\Http\Controllers\ScrachcardController;
 use App\Http\Controllers\VtuController;
 use App\Models\Academicsession;
@@ -631,21 +632,21 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/teachertransfer/{ref_no}', [TeacherController::class, 'teachertransfer'])->name('teachertransfer');
         Route::put('/updatetransfersprinc/{ref_no}', [TeacherController::class, 'updatetransfersprinc'])->name('updatetransfersprinc');
         Route::get('/addresultsad1/{ref_no}', [StudentController::class, 'addresultsad1'])->name('addresultsad1');
-        
-        
         Route::get('approvedstudents', [StudentController::class, 'approvedstudents'])->name('approvedstudents');
-
         Route::get('/contactdelete/{id}', [ContactController::class, 'contactdelete'])->name('contactdelete');
-
         Route::get('/legalcontact', [VisitController::class, 'legalcontact'])->name('legalcontact');
-       
         Route::put('/settingsupdate/{id}', [AdminController::class, 'settingsupdate'])->name('settingsupdate');
-        
         Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
-
         Route::get('/logout', [AdminController::class, 'logout'])->name('logout'); 
         
+        
+        Route::get('/ikedcpay', [ElectricityController::class, 'ikedcpay'])->name('ikedcpay'); 
+        Route::post('/ikejaverify', [ElectricityController::class, 'ikejaverify'])->name('ikejaverify'); 
+        Route::get('/payelectiricty/{ref_no}', [ElectricityController::class, 'payelectiricty'])->name('payelectiricty'); 
+        Route::post('/createlecticpayment', [ElectricityController::class, 'createlecticpayment'])->name('createlecticpayment'); 
+        
        
+        Route::get('/ekedcpay', [ElectricityController::class, 'ekedcpay'])->name('ekedcpay'); 
     });
 });
 
