@@ -645,7 +645,10 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::get('/payelectiricty/{ref_no}', [ElectricityController::class, 'payelectiricty'])->name('payelectiricty'); 
         Route::post('/createlecticpayment', [ElectricityController::class, 'createlecticpayment'])->name('createlecticpayment'); 
         
-       
+        
+        Route::get('/jecpay', [ElectricityController::class, 'jecpay'])->name('jecpay'); 
+        Route::get('/phedpay', [ElectricityController::class, 'phedpay'])->name('phedpay'); 
+        Route::get('/kedcopay', [ElectricityController::class, 'kedcopay'])->name('kedcopay'); 
         Route::get('/ekedcpay', [ElectricityController::class, 'ekedcpay'])->name('ekedcpay'); 
     });
 });

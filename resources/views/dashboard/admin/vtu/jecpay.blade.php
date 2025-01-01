@@ -97,9 +97,9 @@
                 
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">serviceID kano-electric</label>
+                  <label for="exampleInputEmail1">serviceID jos-electric</label>
                   <input type="hidden" name="serviceID" class="form-control" @error('service ID') 
-                  @enderror value="kano-electric" id="exampleInputEmail1" placeholder="serviceID"> 
+                  @enderror value="jos-electric" id="exampleInputEmail1" placeholder="serviceID"> 
                 </div>
                 @error('serviceID')
                 <span class="text-danger">{{ $message }}</span>

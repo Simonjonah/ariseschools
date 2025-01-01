@@ -24,6 +24,22 @@ class ElectricityController extends Controller
         return view('dashboard.admin.vtu.ekedcpay');
     }
 
+    public function kedcopay(){
+
+        return view('dashboard.admin.vtu.kedcopay');
+    }
+
+    public function phedpay(){
+
+        return view('dashboard.admin.vtu.phedpay');
+    }
+
+    public function jecpay(){
+
+        return view('dashboard.admin.vtu.jecpay');
+    }
+    
+    
     
     public function ikejaverify(Request $request){
 
@@ -144,7 +160,7 @@ class ElectricityController extends Controller
     
                        
             
-                    }elseif($transaction['content']['status'] === 'pending'){
+                    }elseif($transaction['status'] == 'pending'){
                         $responseData = Electricity::create([
                         'name' => 'Admin',
                         'email' => Auth::guard('admin')->user()->email,
@@ -156,7 +172,7 @@ class ElectricityController extends Controller
                         'status' => 'pending',
                         'ref_no' => substr(rand(0,time()),0, 9),
                     ]);
-                    }elseif($transaction['content']['status'] === 'initiated'){
+                    }elseif($transaction['status'] == 'initiated'){
                         $responseData = Electricity::create([
                             'name' => 'Admin',
                             'email' => Auth::guard('admin')->user()->email,
