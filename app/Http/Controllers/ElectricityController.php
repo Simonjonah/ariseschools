@@ -38,9 +38,45 @@ class ElectricityController extends Controller
 
         return view('dashboard.admin.vtu.jecpay');
     }
+
+
+    public function ibedcPAY(){
+
+        return view('dashboard.admin.vtu.ibedcPAY');
+    }
+
+    public function kaedcopay(){
+
+        return view('dashboard.admin.vtu.kaedcopay');
+    }
+    public function eedcpay(){
+
+        return view('dashboard.admin.vtu.eedcpay');
+    }
+
+    public function bedc(){
+
+        return view('dashboard.admin.vtu.bedc');
+    }
+
+    public function abapay(){
+
+        return view('dashboard.admin.vtu.abapay');
+    }
+
+    public function yedc(){
+
+        return view('dashboard.admin.vtu.yedc');
+    }
+    
+
+    public function aedcpay(){
+
+        return view('dashboard.admin.vtu.aedcpay');
+    }
     
     
-    
+       
     public function ikejaverify(Request $request){
 
         try {

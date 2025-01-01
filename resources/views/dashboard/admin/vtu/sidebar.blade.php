@@ -310,9 +310,9 @@
 
 
               <li class="nav-item">
-                <a href="{{ url('admin/jecpay') }}" class="nav-link">
+                <a href="{{ url('admin/aedcpay') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>JED - JOS</p>
+                  <p>AEDC - ABUJA</p>
                 </a>
               </li>
 

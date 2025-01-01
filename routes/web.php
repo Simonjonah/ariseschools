@@ -646,6 +646,13 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::post('/createlecticpayment', [ElectricityController::class, 'createlecticpayment'])->name('createlecticpayment'); 
         
         
+        Route::get('/aedcpay', [ElectricityController::class, 'aedcpay'])->name('aedcpay'); 
+        Route::get('/yedc', [ElectricityController::class, 'yedc'])->name('yedc'); 
+        Route::get('/abapay', [ElectricityController::class, 'abapay'])->name('abapay'); 
+        Route::get('/bedc', [ElectricityController::class, 'bedc'])->name('bedc'); 
+        Route::get('/eedcpay', [ElectricityController::class, 'eedcpay'])->name('eedcpay'); 
+        Route::get('/kaedcopay', [ElectricityController::class, 'kaedcopay'])->name('kaedcopay'); 
+        Route::get('/ibedcPAY', [ElectricityController::class, 'ibedcPAY'])->name('ibedcPAY'); 
         Route::get('/jecpay', [ElectricityController::class, 'jecpay'])->name('jecpay'); 
         Route::get('/phedpay', [ElectricityController::class, 'phedpay'])->name('phedpay'); 
         Route::get('/kedcopay', [ElectricityController::class, 'kedcopay'])->name('kedcopay'); 
