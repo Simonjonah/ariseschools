@@ -17,15 +17,15 @@ class ComposerStaticInitb04ffbb3d13578ae39ce0f074b918665
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -34,6 +34,7 @@ class ComposerStaticInitb04ffbb3d13578ae39ce0f074b918665
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
+        'bab4ed692c1fd3872849227e2a85791e' => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src/Support/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -45,6 +46,10 @@ class ComposerStaticInitb04ffbb3d13578ae39ce0f074b918665
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
+        ),
+        'U' => 
+        array (
+            'Unicodeveloper\\Paystack\\' => 24,
         ),
         'T' => 
         array (
@@ -200,6 +205,10 @@ class ComposerStaticInitb04ffbb3d13578ae39ce0f074b918665
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Unicodeveloper\\Paystack\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -598,6 +607,7 @@ class ComposerStaticInitb04ffbb3d13578ae39ce0f074b918665
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DatasubscriptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/DatasubscriptionController.php',
         'App\\Http\\Controllers\\DomainController' => __DIR__ . '/../..' . '/app/Http/Controllers/DomainController.php',
+        'App\\Http\\Controllers\\ElectricityController' => __DIR__ . '/../..' . '/app/Http/Controllers/ElectricityController.php',
         'App\\Http\\Controllers\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\LgaController' => __DIR__ . '/../..' . '/app/Http/Controllers/LgaController.php',
@@ -651,6 +661,7 @@ class ComposerStaticInitb04ffbb3d13578ae39ce0f074b918665
         'App\\Models\\Event' => __DIR__ . '/../..' . '/app/Models/Event.php',
         'App\\Models\\Lga' => __DIR__ . '/../..' . '/app/Models/Lga.php',
         'App\\Models\\Notification' => __DIR__ . '/../..' . '/app/Models/Notification.php',
+        'App\\Models\\Payment' => __DIR__ . '/../..' . '/app/Models/Payment.php',
         'App\\Models\\Position' => __DIR__ . '/../..' . '/app/Models/Position.php',
         'App\\Models\\Result' => __DIR__ . '/../..' . '/app/Models/Result.php',
         'App\\Models\\School' => __DIR__ . '/../..' . '/app/Models/School.php',
@@ -814,6 +825,7 @@ class ComposerStaticInitb04ffbb3d13578ae39ce0f074b918665
         'Cviebrock\\EloquentSluggable\\Sluggable' => __DIR__ . '/..' . '/cviebrock/eloquent-sluggable/src/Sluggable.php',
         'Cviebrock\\EloquentSluggable\\SluggableObserver' => __DIR__ . '/..' . '/cviebrock/eloquent-sluggable/src/SluggableObserver.php',
         'Cviebrock\\EloquentSluggable\\SluggableScopeHelpers' => __DIR__ . '/..' . '/cviebrock/eloquent-sluggable/src/SluggableScopeHelpers.php',
+        'Database\\Factories\\PaymentFactory' => __DIR__ . '/../..' . '/database/factories/PaymentFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
@@ -6246,6 +6258,12 @@ class ComposerStaticInitb04ffbb3d13578ae39ce0f074b918665
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'Unicodeveloper\\Paystack\\Exceptions\\IsNullException' => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src/Exceptions/IsNullException.php',
+        'Unicodeveloper\\Paystack\\Exceptions\\PaymentVerificationFailedException' => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src/Exceptions/PaymentVerificationFailedException.php',
+        'Unicodeveloper\\Paystack\\Facades\\Paystack' => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src/Facades/Paystack.php',
+        'Unicodeveloper\\Paystack\\Paystack' => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src/Paystack.php',
+        'Unicodeveloper\\Paystack\\PaystackServiceProvider' => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src/PaystackServiceProvider.php',
+        'Unicodeveloper\\Paystack\\TransRef' => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src/TransRef.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Webmozart\\Assert\\InvalidArgumentException' => __DIR__ . '/..' . '/webmozart/assert/src/InvalidArgumentException.php',

@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '82b7d5c27ec3739df3450b12eaa1ef4600bf4e71',
+        'reference' => '77f21387d7854f2f1a53662aa37bfaf57c1df7d3',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -430,7 +430,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '82b7d5c27ec3739df3450b12eaa1ef4600bf4e71',
+            'reference' => '77f21387d7854f2f1a53662aa37bfaf57c1df7d3',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -832,8 +832,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1361,6 +1361,15 @@
             'reference' => '83ee6f38df0a63106a9e4536e3060458b74ccedb',
             'type' => 'library',
             'install_path' => __DIR__ . '/../tijsverkoyen/css-to-inline-styles',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'unicodeveloper/laravel-paystack' => array(
+            'pretty_version' => '1.2.0',
+            'version' => '1.2.0.0',
+            'reference' => '4d540e081f63f8ceca42ded5668da8ec93a3a084',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../unicodeveloper/laravel-paystack',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

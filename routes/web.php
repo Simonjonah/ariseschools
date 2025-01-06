@@ -52,6 +52,7 @@ use App\Http\Controllers\CodeController;
 use App\Http\Controllers\ElectricityController;
 use App\Http\Controllers\ScrachcardController;
 use App\Http\Controllers\VtuController;
+use App\Http\Controllers\PaymentController;
 use App\Models\Academicsession;
 use App\Models\Alm;
 use App\Models\Blog;
@@ -295,6 +296,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::post('/createmtnairtime', [VtuController::class, 'createmtnairtime'])->name('createmtnairtime');
         Route::post('/createscrachcard', [ScrachcardController::class, 'createscrachcard'])->name('createscrachcard');
         
+        Route::get('/payloadstack/{transaction_id}', [VtuController::class, 'payloadstack'])->name('payloadstack');
+
+        Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
         Route::get('/addnecoscrahcards', [ScrachcardController::class, 'addnecoscrahcards'])->name('addnecoscrahcards');
         Route::get('/viewwaecscrahcards', [ScrachcardController::class, 'viewwaecscrahcards'])->name('viewwaecscrahcards');
         Route::get('/viewcard/{ref_no}', [ScrachcardController::class, 'viewcard'])->name('viewcard');

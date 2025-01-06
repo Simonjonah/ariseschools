@@ -152,7 +152,8 @@ class VtuController extends Controller
             // dd($responseData);
 
             if ($transaction['status'] == 'delivered') {
-                return redirect()->back()->with('success', 'Transaction  successful');
+                return redirect()->route('admin.payloadstack', ['transaction_id' =>$transaction['transactionId']]); 
+                // return redirect()->back()->with('success', 'Transaction  successful');
             }
             return redirect()->back()->with('fail', 'Transaction not successful');
     
@@ -166,7 +167,10 @@ class VtuController extends Controller
     }
 
 
-    
+    public function payloadstack($transaction_id){
+        $pay_load = Vtu::where('transaction_id', $transaction_id)->first();
+        return view('dashboard.admin.vtu.payloadstack', compact('pay_load'));
+    }
 
     
 }
